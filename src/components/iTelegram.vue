@@ -7,6 +7,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xml:space="preserve"
     xmlns:serif="http://www.serif.com/"
+    fill="#2196F3"
     style="
       fill-rule: evenodd;
       clip-rule: evenodd;

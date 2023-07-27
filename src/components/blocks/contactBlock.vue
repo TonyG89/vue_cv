@@ -13,10 +13,15 @@
             target="_blank"
             class="d-flex text-first font-weight-bold"
           >
-            <v-icon class="pr-2"> mdi-{{ contact.icon }} </v-icon>
+            <v-icon class="pr-2">
+              <template v-if="contact.icon === 'telegram'">
+                <iTelegram />
+              </template>
+              <template v-else> mdi-{{ contact.icon }} </template>
+            </v-icon>
             <v-icon icon="fa:fas fa-search"> fa-{{ contact.icon }} </v-icon>
             <v-icon class="pr-2"> telegram </v-icon>
-            <v-icon class="pr-2"> {{ telegramSvg }} </v-icon>
+
             <v-list-item-title class="font-weight-bold">
               {{ contact.value }}
             </v-list-item-title>
@@ -28,6 +33,7 @@
 </template>
 
 <script setup>
+import iTelegram from "../iTelegram.vue";
 const photoUrl = "./me.jpg";
 
 const props = defineProps({

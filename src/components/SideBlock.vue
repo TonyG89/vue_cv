@@ -1,7 +1,7 @@
 <template>
-  <v-navigation-drawer app permanent>
+  <v-navigation-drawer width="325" app permanent>
     <!-- БЛОК: Фотография и контакты -->
-    <contactBlock :contacts="contactInfo" />
+    <ContactBlock :contacts="contactInfo" />
     <!-- Софт скилы -->
     <v-card class="side-menu-card">
       <v-card-title>Софт скилы</v-card-title>
@@ -36,7 +36,7 @@
 
 <script setup>
 import { ref } from "vue";
-import contactBlock from "@/components/blocks/contactBlock.vue";
+import ContactBlock from "@/components/blocks/ContactBlock.vue";
 import { contacts } from "@/data/";
 // import contacts from "@/data/contacts";
 const photoUrl = "./mxe.jpg";
