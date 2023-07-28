@@ -38,8 +38,6 @@
 import { ref } from "vue";
 import ContactBlock from "@/components/blocks/ContactBlock.vue";
 import { contacts } from "@/data/";
-// import contacts from "@/data/contacts";
-const photoUrl = "./mxe.jpg";
 const contactInfo = contacts;
 </script>
 
