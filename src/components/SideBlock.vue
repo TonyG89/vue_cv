@@ -1,44 +1,27 @@
 <template>
   <v-navigation-drawer width="325" app permanent>
     <!-- БЛОК: Фотография и контакты -->
-    <ContactBlock :contacts="contactInfo" />
+    <ContactBlock :contacts="contacts" />
     <!-- Софт скилы -->
-    <v-card class="side-menu-card">
-      <v-card-title>Софт скилы</v-card-title>
-      <v-card-text>
-        <v-chip>HTML</v-chip>
-        <v-chip>CSS</v-chip>
-        <v-chip>JavaScript</v-chip>
-        <!-- Добавьте другие софт скилы -->
-      </v-card-text>
-    </v-card>
+    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
+    <!-- <SoftSkillsBlock title="softSkillsClass" :skills="softSkillsClass" /> -->
 
     <!-- Хард скилы -->
-    <v-card class="side-menu-card">
-      <v-card-title>Хард скилы</v-card-title>
-      <v-card-text>
-        <v-chip>Управление проектами</v-chip>
-        <v-chip>Аналитика</v-chip>
-        <v-chip>Решение проблем</v-chip>
-        <!-- Добавьте другие хард скилы -->
-      </v-card-text>
-    </v-card>
+    <SoftSkillsBlock title="Hard Skills" :skills="hardSkills" />
 
     <!-- Английский язык -->
-    <v-card class="side-menu-card">
-      <v-card-title>Английский язык</v-card-title>
-      <v-card-text>
-        <p>Владение английским на уровне B2</p>
-      </v-card-text>
-    </v-card>
+    <LanguagesBlock />
   </v-navigation-drawer>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import ContactBlock from "@/components/blocks/ContactBlock.vue";
-import { contacts } from "@/data/";
-const contactInfo = contacts;
+import SoftSkillsBlock from "@/components/blocks/SkillsBlock.vue";
+import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
+import { contacts, skills } from "@/data/";
+const { softSkills, hardSkills, softSkillsClass } = skills();
+console.log(softSkillsClass);
 </script>
 
 <style>

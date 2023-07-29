@@ -7,6 +7,7 @@
 // Components
 import App from './App.vue'
 import 'material-icons-font/material-icons-font.css';
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 // Composables
 import { createApp } from 'vue'
 

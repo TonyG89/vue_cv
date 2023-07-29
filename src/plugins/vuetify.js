@@ -22,9 +22,9 @@ export default createVuetify({
           primary: '#1867C0',
           secondary: '#5CBBF6',
           first: '#2196F3', // blue
-          second: '#3F51B5', //indigo
+          second: '#673AB7', //indigo
           third: '#546E7A', //blue-grey-darken-1
-          background: '#673AB7', //deep-purple
+          background: '#E65100', //deep-purple
           wrapper: '#CDDC39', //lime
           test: '#E65100',
         },
