@@ -1,12 +1,31 @@
 <template>
   <v-main>
     <h1>Frontend Web Developer</h1>
-    <v-container fluid class="bg-red" >
+    <v-container fluid class="bg-red">
       <v-row>
         <v-col cols="12">
           <v-card class="header-card" dark>
             <v-img :src="photoUrl" height="200"></v-img>
-            <v-card-title class="display-1 white--text">Ваше имя</v-card-title>
+            <v-card-title class="display-1 white--text"
+              >интересы-хобби:</v-card-title
+            >
+          </v-card>
+        </v-col>
+      </v-row>
+      <TextBlock title="hobby" :data="hobby" />
+      <TextBlock title="Education" :data="hobby" />
+      <TextBlock title="Work Experience" :data="hobby" />
+
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-card class="contact-card" dark>
+            <v-card-title class="white--text">Theory & Practice</v-card-title>
+            <v-card-text class="white--text">
+              блок про литерату, курсы
+            </v-card-text>
+            <v-card-text class="white--text">
+              мое портфолию ссылка на его.
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -14,11 +33,8 @@
       <v-row>
         <v-col cols="12" md="6">
           <v-card class="contact-card" dark>
-            <v-card-title class="white--text">Контакты</v-card-title>
-            <v-card-text class="white--text">
-              <p>Эл. почта: your.email@example.com</p>
-              <p>Телефон: +1234567890</p>
-            </v-card-text>
+            <v-card-title class="white--text">Work Experience</v-card-title>
+            <v-card-text class="white--text"> </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -42,7 +58,8 @@
 </template>
 
 <script setup>
-
+import TextBlock from "./blocks/TextBlock.vue";
+import { hobby } from "@/data";
 </script>
 
 <style>

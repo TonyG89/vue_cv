@@ -1,7 +1,7 @@
 <template>
   <v-app>
-          <SideBlock />
-          <Main />
+    <SideBlock />
+    <Main />
   </v-app>
 </template>
 
@@ -18,10 +18,8 @@ import SideBlock from "./components/SideBlock.vue";
   background: red;
 }
 
-a{
+a {
   text-decoration: none;
-  color:  var(--v-test-1-base);
+  color: var(--v-test-1-base);
 }
-
-
 </style>
