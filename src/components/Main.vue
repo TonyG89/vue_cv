@@ -3,10 +3,12 @@
     <HeroBlock class="mb-10" :data="aboutMe" />
     <v-container fluid>
       <v-row>
-        <v-col cols="12">
+        <v-col cols="6">
           <EducationBlock :data="education" />
+          <v-col cols="6">
+            <WorkExperienceBlock :data="experience" />
+          </v-col>
           <ListBlock title="hobby" :data="hobby" />
-          <WorkExperienceBlock :data="experience" />
         </v-col>
       </v-row>
       <v-row>
@@ -69,7 +71,8 @@ import { hobby, education, experience, aboutMe } from "@/data";
 }
 
 .cardBlock {
-  width: 600px;
+  max-width: 600px;
+  width: auto;
 }
 
 @keyframes fadeIn {
