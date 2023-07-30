@@ -1,21 +1,14 @@
 <template>
-  <v-main>
-    <h1>Frontend Web Developer</h1>
-    <v-container fluid class="bg-red">
+  <v-main class="bgImg ml-4">
+    <HeroBlock class="mb-10" :data="aboutMe" />
+    <v-container fluid>
       <v-row>
         <v-col cols="12">
-          <v-card class="header-card" dark>
-            <v-img :src="photoUrl" height="200"></v-img>
-            <v-card-title class="display-1 white--text"
-              >интересы-хобби:</v-card-title
-            >
-          </v-card>
+          <EducationBlock :data="education" />
+          <ListBlock title="hobby" :data="hobby" />
+          <WorkExperienceBlock :data="experience" />
         </v-col>
       </v-row>
-      <TextBlock title="hobby" :data="hobby" />
-      <TextBlock title="Education" :data="hobby" />
-      <TextBlock title="Work Experience" :data="hobby" />
-
       <v-row>
         <v-col cols="12" md="6">
           <v-card class="contact-card" dark>
@@ -59,17 +52,24 @@
 
 <script setup>
 import TextBlock from "./blocks/TextBlock.vue";
-import { hobby } from "@/data";
+import ListBlock from "./blocks/ListBlock.vue";
+import EducationBlock from "./blocks/EducationBlock.vue";
+import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
+import HeroBlock from "./blocks/HeroBlock.vue";
+import { hobby, education, experience, aboutMe } from "@/data";
 </script>
 
 <style>
 /* Стили как ранее */
-
 /* Анимации и движения */
 .header-card {
   background-color: #333333;
   text-align: center;
   animation: fadeIn 1s;
+}
+
+.cardBlock {
+  width: 600px;
 }
 
 @keyframes fadeIn {

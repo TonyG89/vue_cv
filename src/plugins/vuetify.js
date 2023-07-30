@@ -27,6 +27,9 @@ export default createVuetify({
           background: '#E65100', //deep-purple
           wrapper: '#CDDC39', //lime
           test: '#E65100',
+          textFirst: '#999D1A',
+          textSecond: '#546E7A',
+          textThird: '#546E7A',
         },
       },
     },
