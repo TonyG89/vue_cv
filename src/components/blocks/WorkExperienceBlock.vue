@@ -5,43 +5,63 @@
         Work Experience
       </h1>
       <v-card class="header-card cardBlock hidden-xs" dark>
-        <v-expansion-panels
-          class="ma-2 w-auto"
-          v-for="job in data"
-          :key="job.title"
-        >
-          <v-expansion-panel hide-actions class="my-1">
-            <template #title>
-              <v-card
-                class="header-card bg-grey border d-flex"
-                min-width="300px"
-                max-width="600px"
-                dark
-              >
+        <div class="ma-2 w-auto" v-for="job in data" :key="job.title">
+          <div class="d-flex justify-space-around w-100">
+            <!-- LINE  -->
+            <div class="text-third d-flex flex-column justify-center">
+              <h6>{{ job.dates[1] }}</h6>
+              <div class="dot"></div>
+              <h6>{{ job.dates[0] }}</h6>
+            </div>
+
+            <v-card class="my-1 pa-2 defaultWidth">
+              <div>
                 <v-row
                   class="height d-flex justify-space-between align-center mx-0"
                 >
                   <v-col class="align-self-end" v-if="job?.logo" cols="3">
                     <img class="logo" :src="job.logo" />
                   </v-col>
-                  <v-col cols="9" class="align-self-start mt-4 text-right">
+                  <v-col cols="9" class="align-self-start text-right">
                     <h3 class="mb-3">
                       {{ job.title?.toUpperCase() }}
                     </h3>
                     <!-- <div class="justify-space-between d-flex flex-column">
                       <p>company:</p> -->
                     <h4>{{ job.place }}</h4>
+                    <h6 v-if="job.type">
+                      <v-icon
+                        class=""
+                        :icon="`mdi-${
+                          job.type === 'product' ? 'cart' : 'account-group'
+                        }`"
+                        size="15"
+                      />
+                      {{ job.type }}
+                    </h6>
+                    <h6 class="mt-2 text-third">
+                      {{ job.during }} {{ job.location }}
+                    </h6>
                   </v-col>
-                  <v-col class="align-self-end">
-                    <h6 class="">{{ job.dates }}</h6>
-                  </v-col>
+                  <v-divider />
+                  <v-col class="text-left"
+                    >{{ job.text }}
+                    <v-divider v-if="job.skills" />
+                    <v-chip
+                      v-for="(skill, ind) of job.skills?.split(', ')"
+                      :key="ind"
+                      variant="outlined"
+                      color="second"
+                      label
+                      class="ma-1"
+                      >{{ skill }}</v-chip
+                    ></v-col
+                  >
                 </v-row>
-              </v-card>
-            </template>
-
-            <template #text>{{ job.text }}</template>
-          </v-expansion-panel>
-        </v-expansion-panels>
+              </div>
+            </v-card>
+          </div>
+        </div>
       </v-card>
     </v-col>
   </v-row>
@@ -96,10 +116,20 @@ const Block = defineComponent({
 }
 
 .height {
-  height: 180px;
+  height: auto;
 }
 .defaultWidth {
   min-width: 300px;
-  width: 400px;
+  max-width: 400px;
+}
+
+.dot {
+  background: #e04b4b;
+  width: 3px;
+  align-self: center;
+  margin: 0 auto;
+  height: 100%;
+  background-image: url(https://i.etsystatic.com/10919371/r/il/f209ce/4359772424/il_600x600.4359772424_6779.jpg);
+  background-size: cover;
 }
 </style>

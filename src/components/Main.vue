@@ -3,11 +3,9 @@
     <HeroBlock class="mb-10" :data="aboutMe" />
     <v-container fluid>
       <v-row>
-        <v-col cols="6">
-          <EducationBlock :data="education" />
-          <v-col cols="6">
-            <WorkExperienceBlock :data="experience" />
-          </v-col>
+        <v-col class="d-flex flex-wrap justify-center ">
+          <EducationBlock  :data="education" />
+          <WorkExperienceBlock :data="experience" />
           <ListBlock title="hobby" :data="hobby" />
         </v-col>
       </v-row>
