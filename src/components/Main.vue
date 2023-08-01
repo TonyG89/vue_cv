@@ -1,14 +1,17 @@
 <template>
-  <v-main class="bgImg ml-4">
-    <HeroBlock class="mb-10" :data="aboutMe" />
+  <v-main class="bgImg ml-4 w-50">
     <v-container fluid>
-      <v-row>
-        <v-col class="d-flex flex-wrap justify-center">
-          <EducationBlock :data="education" />
-          <WorkExperienceBlock :data="experience" />
-          <ListBlock title="hobby" :data="hobby" />
-        </v-col>
-      </v-row>
+      <HeroBlock class="mb-10" :data="aboutMe" />
+      <!-- BLOCK 2 -->
+      <div class="d-flex align-baseline">
+        <BioBlock :data="aboutMe" />
+        <EducationBlock :data="education" />
+      </div>
+      <!-- BLOCK 3 -->
+      <div class="d-flex align-baseline my-8">
+        <WorkExperienceBlock :data="experience" />
+        <HobbyBlock title="hobby" :data="hobby" />
+      </div>
       <v-row>
         <v-col cols="12" md="6">
           <v-card class="contact-card" dark>
@@ -22,46 +25,21 @@
           </v-card>
         </v-col>
       </v-row>
-
-      <v-row>
-        <v-col cols="12" md="6">
-          <v-card class="contact-card" dark>
-            <v-card-title class="white--text">Work Experience</v-card-title>
-            <v-card-text class="white--text"> </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-
-      <v-row>
-        <v-col cols="12">
-          <v-card class="about-card" dark>
-            <v-card-title class="white--text">Обо мне</v-card-title>
-            <v-card-text class="white--text">
-              <p>
-                Здесь можете рассказать кратко о себе, вашем опыте и интересах.
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-
-      <!-- Другие разделы резюме -->
     </v-container>
   </v-main>
 </template>
 
 <script setup>
 import TextBlock from "./blocks/TextBlock.vue";
-import ListBlock from "./blocks/ListBlock.vue";
+import HobbyBlock from "./blocks/HobbyBlock.vue";
 import EducationBlock from "./blocks/EducationBlock.vue";
 import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
 import HeroBlock from "./blocks/HeroBlock.vue";
+import BioBlock from "./blocks/BioBlock.vue";
 import { hobby, education, experience, aboutMe } from "@/data";
 </script>
 
 <style lang="scss">
-/* Стили как ранее */
-/* Анимации и движения */
 .header-card {
   background-color: #333333;
   text-align: center;
@@ -84,12 +62,12 @@ import { hobby, education, experience, aboutMe } from "@/data";
   &:hover {
     transform: translateY(-5px);
     transition: transform 0.5s linear;
-     > div {
+    > div {
       //:not(:last-child)
       filter: invert(100%);
       transition: all 0.5s ease-in;
     }
-     .icon {
+    .icon {
       transform: scale(1.2);
       transition: all 0.3s ease-in-out;
     }

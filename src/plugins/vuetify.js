@@ -24,15 +24,15 @@ export default createVuetify({
           first: '#2196F3', // blue
           second: '#673AB7', //indigo
           third: '#546E7A', //blue-grey-darken-1
-          background: '#E65100', //deep-purple
+          background: '#546E7A', //deep-purple
           wrapper: '#CDDC39', //lime
           test: '#E65100',
           textFirst: '#999D1A',
           textSecond: '#546E7A',
           textThird: '#546E7A',
           bgFirst: '#999D1A',
-          bgSecond: 'deep-purple',
-          bgThird: '#546E7A',
+          bgSecond: '#546E7A',
+          bgThird: '#292930',
         },
       },
     },

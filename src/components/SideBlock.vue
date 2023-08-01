@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer width="325" app permanent>
+  <div class="w-25"  app permanent>
     <!-- БЛОК: Фотография и контакты -->
     <ContactBlock :contacts="contacts" />
     <!-- Софт скилы -->
@@ -11,7 +11,7 @@
 
     <!-- Английский язык -->
     <LanguagesBlock />
-  </v-navigation-drawer>
+  </div>
 </template>
 
 <script setup>

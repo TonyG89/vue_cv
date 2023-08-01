@@ -1,7 +1,9 @@
 <template>
-  <v-app>
-    <SideBlock class="bg-black" />
-    <Main />
+  <v-app class="wrapper">
+    <div class="d-flex">
+      <SideBlock />
+      <Main />
+    </div>
   </v-app>
 </template>
 
@@ -24,6 +26,14 @@ import SideBlock from "./components/SideBlock.vue";
 
 .fitContent {
   width: fit-content;
+}
+
+.smBlock {
+  max-width: 400px;
+}
+
+.lgBlock {
+  max-width: 600px;
 }
 
 .sizeText {
@@ -49,9 +59,9 @@ import SideBlock from "./components/SideBlock.vue";
 
 .wrapper {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
-  background: green;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 a {
