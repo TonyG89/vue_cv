@@ -12,31 +12,26 @@
             min-width="300px"
             active-color="black"
           >
-            <button
-              class="animate ma-4  d-flex fitContent"
+            <div
+              class="animate ma-4 d-flex"
               @click="flags[item.title] = !flags[item.title]"
             >
               <div class="pa-1 img rounded-e-sm bg-bgSecond heightBlock">
-                <v-icon :icon="`mdi-${item.icon}`" size="60" class="mt-4 mx-3">
+                <v-icon
+                  :icon="`mdi-${item.icon}`"
+                  size="30"
+                  class="mt-2 mx-3 icon"
+                >
                 </v-icon>
               </div>
               <div
-                class="bg-bgThird heightBlock w300 d-flex align-center px-4 text-decoration-underline text-high-emphasis"
+                class="bg-bgThird heightBlock weightBlock d-flex align-center px-4 text-decoration-underline text-high-emphasis"
               >
-                <h1 c>
+                <h3>
                   {{ item.title?.toUpperCase() }}
-                </h1>
+                </h3>
               </div>
 
-              <v-expand-transition>
-                <v-card
-                  v-show="flags[item.title]"
-                  height="100"
-                  width="300"
-                  class="mx-auto bg-secondary pr-4 rounded-0"
-                  :text="item.desc"
-                />
-              </v-expand-transition>
               <!-- <v-tooltip v-if="item.desc" activator="parent" location="right">
                 <h2
                 class='w300'
@@ -44,7 +39,17 @@
                   {{ item.desc }}
                 </h2>
               </v-tooltip> -->
-            </button>
+            </div>
+            <v-expand-transition>
+              <v-card
+                v-show="flags[item.title]"
+                height="100"
+                width="180"
+                class="hint bg-secondary weightBlock rounded-0"
+                :text="item.desc"
+              >
+              </v-card>
+            </v-expand-transition>
           </v-list-item>
         </v-list>
       </v-card>
@@ -87,12 +92,19 @@ const props = defineProps({
   margin-right: -10px;
 }
 
-.w300 {
-  width: 300px;
+.weightBlock {
+  width: 180px;
+}
+
+.hint {
+  float: right;
+  margin-right: 18px;
+  margin-top: -21px;
+  z-index: -1;
 }
 
 .heightBlock {
-  height: 100px;
+  height: 50px;
   border: 1px solid rgb(119, 119, 119);
 }
 </style>

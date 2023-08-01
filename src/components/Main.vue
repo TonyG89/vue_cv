@@ -74,11 +74,50 @@ import { hobby, education, experience, aboutMe } from "@/data";
 }
 
 .animate {
-  animation: 4s linear 0s infinite alternate all;
-
+  transition: all 1.2s ease-out;
+  > div {
+    transition: all 1.2s ease-out;
+    .icon {
+      transition: all 1.2s ease-out;
+    }
+  }
   &:hover {
-    transform: translateY(-3px);
-    animation: all 1s linear infinite;
+    transform: translateY(-5px);
+    transition: transform 0.5s linear;
+     > div {
+      //:not(:last-child)
+      filter: invert(100%);
+      transition: all 0.5s ease-in;
+    }
+     .icon {
+      transform: scale(1.2);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
   }
 }
 
