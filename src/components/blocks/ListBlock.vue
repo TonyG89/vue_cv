@@ -12,30 +12,39 @@
             min-width="300px"
             active-color="black"
           >
-            <div class="ma-10 d-flex fitContent">
-              <div class="pa-4 img rounded-e-sm bg-first heightBlock">
-                <v-icon :icon="`mdi-${item.icon}`" size="120"> </v-icon>
+            <button
+              class="animate ma-4  d-flex fitContent"
+              @click="flags[item.title] = !flags[item.title]"
+            >
+              <div class="pa-1 img rounded-e-sm bg-bgSecond heightBlock">
+                <v-icon :icon="`mdi-${item.icon}`" size="60" class="mt-4 mx-3">
+                </v-icon>
               </div>
               <div
-                class="bg-red heightBlock d-flex align-center px-4 text-decoration-underline text-high-emphasis"
-                :style="{ width: '300px' }"
+                class="bg-bgThird heightBlock w300 d-flex align-center px-4 text-decoration-underline text-high-emphasis"
               >
                 <h1 c>
                   {{ item.title?.toUpperCase() }}
                 </h1>
               </div>
-              <v-tooltip v-if="item.hint" activator="parent" location="right">
+
+              <v-expand-transition>
+                <v-card
+                  v-show="flags[item.title]"
+                  height="100"
+                  width="300"
+                  class="mx-auto bg-secondary pr-4 rounded-0"
+                  :text="item.desc"
+                />
+              </v-expand-transition>
+              <!-- <v-tooltip v-if="item.desc" activator="parent" location="right">
                 <h2
-                  style="
-                     {
-                      font-size: 30px;
-                    }
-                  "
+                class='w300'
                 >
-                  {{ item.hint }}
+                  {{ item.desc }}
                 </h2>
-              </v-tooltip>
-            </div>
+              </v-tooltip> -->
+            </button>
           </v-list-item>
         </v-list>
       </v-card>
@@ -44,10 +53,28 @@
 </template>
 
 <script setup>
-defineProps({
+import { ref, reactive, computed } from "vue";
+
+const flags = reactive({});
+
+flags.value = props.data?.reduce((acc, obj) => {
+  if (obj.hasOwnProperty("title")) {
+    acc[obj.title] = !false;
+  }
+  return acc;
+}, {});
+
+const hidden = computed(() => flags);
+
+const onHide = (flag) => {
+  console.log(flag.value);
+  // flags.flag = !flags.flag;
+};
+
+const props = defineProps({
   title: String,
   data: {
-    type: Object, // {title,hint}
+    type: Array, // [{title,icon,desc}]
     require: true,
   },
 });
@@ -60,8 +87,12 @@ defineProps({
   margin-right: -10px;
 }
 
+.w300 {
+  width: 300px;
+}
+
 .heightBlock {
-  height: 160px;
-  border: 2px solid black;
+  height: 100px;
+  border: 1px solid rgb(119, 119, 119);
 }
 </style>

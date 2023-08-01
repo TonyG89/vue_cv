@@ -1,8 +1,8 @@
 class Hobby {
-  constructor(title, icon, hint = '') {
+  constructor(title, icon, desc = '') {
     this.title = title;
     this.icon = icon;
-    this.hint = hint;
+    this.desc = desc;
   }
 }
 

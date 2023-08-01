@@ -3,8 +3,8 @@
     <HeroBlock class="mb-10" :data="aboutMe" />
     <v-container fluid>
       <v-row>
-        <v-col class="d-flex flex-wrap justify-center ">
-          <EducationBlock  :data="education" />
+        <v-col class="d-flex flex-wrap justify-center">
+          <EducationBlock :data="education" />
           <WorkExperienceBlock :data="experience" />
           <ListBlock title="hobby" :data="hobby" />
         </v-col>
@@ -59,7 +59,7 @@ import HeroBlock from "./blocks/HeroBlock.vue";
 import { hobby, education, experience, aboutMe } from "@/data";
 </script>
 
-<style>
+<style lang="scss">
 /* Стили как ранее */
 /* Анимации и движения */
 .header-card {
@@ -71,6 +71,15 @@ import { hobby, education, experience, aboutMe } from "@/data";
 .cardBlock {
   max-width: 600px;
   width: auto;
+}
+
+.animate {
+  animation: 4s linear 0s infinite alternate all;
+
+  &:hover {
+    transform: translateY(-3px);
+    animation: all 1s linear infinite;
+  }
 }
 
 @keyframes fadeIn {
