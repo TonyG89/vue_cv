@@ -4,6 +4,7 @@
       <SideBlock />
       <Main />
     </div>
+    <v-footer>'copyleft (C)'</v-footer>
   </v-app>
 </template>
 

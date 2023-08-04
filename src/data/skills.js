@@ -1,7 +1,7 @@
 export default function () {
 
   class SoftSkill {
-    constructor(title, started = '', hint = null, type = 0) {
+    constructor(title, started = '', hint = null, type = 1) {
       this.title = title;
       this.started = started;
       this.hint = hint;
@@ -109,21 +109,25 @@ export default function () {
 
 
   const hardSkills = [
-    new HardSkill('Orderly', 1),
+    [new HardSkill('Orderly', 1),
     new HardSkill('Responsibility', 1),
     new HardSkill('Punctuality', 1),
-
-    new HardSkill('Communication', 2),
+    ],
+    [new HardSkill('Communication', 2),
     new HardSkill('Stress resistance', 2),
     new HardSkill('Teamwork', 2),
-
-    new HardSkill('Creativity', 3),
-
-    new HardSkill('Self-development', 4),
+    ], [
+      new HardSkill('Creativity', 3),
+    ], [new HardSkill('Self-development', 4),
     new HardSkill('Attention to detail', 4),
     new HardSkill('Persistence', 4),
-
+    ]
   ]
+
+  // const hardSkillsDesc = [
+  //   'I enjoy completing tasks on time and never being late. I am always looking for ways to improve my productivity and efficiency.',
+
+  // ]
   // Orderly
   // Responsibility
   // Punctuality
