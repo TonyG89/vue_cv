@@ -14,7 +14,7 @@
               <h6>{{ job.dates[0] }}</h6>
             </div>
 
-            <v-card class="my-1 pa-2 defaultWidth">
+            <v-card class="my-1 pa-2 defaultWidth ">
               <v-row
                 class="height d-flex justify-space-between align-center mx-0"
                 @click="flags[job.place] = !flags[job.place]"
@@ -85,12 +85,12 @@ import { defineComponent } from "vue";
 const flags = reactive({});
 
 // TODO: CREATE HELPER
-flags.value = props.data?.reduce((acc, obj) => {
-  if (obj.hasOwnProperty("place")) {
-    acc[obj] = false;
-  }
-  return acc;
-}, {});
+// flags.value = props.data?.reduce((acc, obj) => {
+//   if (obj.hasOwnProperty("place")) {
+//     acc[obj] = false;
+//   }
+//   return acc;
+// }, {});
 
 const props = defineProps({
   data: {

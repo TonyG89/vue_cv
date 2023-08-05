@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import iTelegram from "../iTelegram.vue";
+import iTelegram from "../icons/iTelegram.vue";
 
 const props = defineProps({
   photoUrl: {

@@ -10,5 +10,5 @@ import vuetify from './vuetify'
 
 export function registerPlugins(app) {
   loadFonts()
-  app.use(vuetify,{iconfont: 'md'})
+  app.use(vuetify, { iconfont: 'fa' })
 }

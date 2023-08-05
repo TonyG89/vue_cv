@@ -2,13 +2,9 @@
   <div class="w-25" app permanent>
     <!-- БЛОК: Фотография и контакты -->
     <ContactBlock :contacts="contacts" />
-    <!-- Софт скилы -->
-    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
-    <!-- <SoftSkillsBlock title="softSkillsClass" :skills="softSkillsClass" /> -->
-
-    <!-- Хард скилы -->
-    <HardSkillsBlock title="Hard Skills" :skills="hardSkills" />
-
+    <TechSkillsBlock title="Soft Skills" :skills="techSkillsClass" />
+    <SoftSkillsBlock title="Hard Skills" :skills="softSkills" />
+    <!-- <SoftSkillsBlock title="techSkillsClass" :skills="techSkillsClass" /> -->
     <!-- Английский язык -->
     <LanguagesBlock />
   </div>
@@ -17,12 +13,12 @@
 <script setup>
 import { ref } from "vue";
 import ContactBlock from "@/components/blocks/ContactBlock.vue";
+import TechSkillsBlock from "@/components/blocks/TechSkillsBlock.vue";
 import SoftSkillsBlock from "@/components/blocks/SoftSkillsBlock.vue";
-import HardSkillsBlock from "@/components/blocks/HardSkillsBlock.vue";
 import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
 import { contacts, skills } from "@/data/";
-const { softSkills, hardSkills, softSkillsClass } = skills();
-console.log(softSkillsClass);
+const { softSkills, techSkillsClass } = skills();
+console.log(techSkillsClass);
 </script>
 
 <style>

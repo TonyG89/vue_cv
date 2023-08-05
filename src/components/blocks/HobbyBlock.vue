@@ -58,16 +58,11 @@
 
 <script setup>
 import { ref, reactive, computed } from "vue";
-
+import { addMethodToObject } from "@/helper";
 const flags = reactive({});
 
 // TODO: CREATE HELPER
-flags.value = props.data?.reduce((acc, obj) => {
-  if (obj.hasOwnProperty("title")) {
-    acc[obj.title] = false;
-  }
-  return acc;
-}, {});
+// flags.value = addMethodToObject(props.data, "title");
 
 const props = defineProps({
   title: String,

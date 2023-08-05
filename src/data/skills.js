@@ -1,104 +1,115 @@
+import { gulp, agGrid, figma, joomla, vue } from "@/components/icons/";
+
+
 export default function () {
 
-  class SoftSkill {
-    constructor(title, started = '', hint = null, type = 1) {
+  class TechSkill {
+    constructor(title, hint = null, type = 1, icon = false, stack = null) {
       this.title = title;
-      this.started = started;
       this.hint = hint;
       this.type = type;
+      this.icon = icon;
+      this.stack = stack
     }
   }
 
-  class MainSoftSkill extends SoftSkill {
-    constructor(title, started, hint) {
-      super(title, started, hint, 3)
+  class FullTechSkill extends TechSkill {
+    constructor(title, started, hint, icon, stack) {
+      super(title, hint, 3, icon, stack)
+      this.started = started
     }
   }
 
-  class ExtraSoftSkill extends SoftSkill {
-    constructor(title, started, hint) {
-      super(title, started, hint, 2)
+  class BasicTechSkill extends TechSkill {
+    constructor(title, hint, icon) {
+      super(title, hint, 2, icon)
     }
   }
 
-  class MinimalSoftSkill extends SoftSkill {
-    constructor(title, started, hint) {
-      super(title, started, hint, 1)
-    }
-  }
+  const techSkillsClass = [
+    [
+      new FullTechSkill('HTML', '2010', '', 'mdi-language-html5'),
+      new FullTechSkill('CSS', '2010', ['SASS', 'Bootstrap 5', 'TailwindCSS'], 'mdi-language-css3'),
+      new FullTechSkill('JavaScript', '03.04.2022', ['ES6', 'read book Kyle Simpson and other'], 'mdi-language-javascript'),
+      new FullTechSkill('Vue3', '11.2022', '', vue),
+      new FullTechSkill('Figma', '', '', figma),
+      new FullTechSkill('GIT', '04.2022', '', 'mdi-git'),
+      new FullTechSkill('Google Sheets', '2010', '', 'mdi-file-excel'),
+    ],
+    [
+      new BasicTechSkill('SQL', '', 'mdi-database'),
+      new FullTechSkill('React', '07.2022', '', 'mdi-react'),
+      new FullTechSkill('Ag-Grid', '02.2023', '', agGrid),
 
-  const softSkillsClass = [
-    new MainSoftSkill('HTML', '2012', ''),
-    new MainSoftSkill('CSS', '2012', ['SASS', 'Bootstrap 5', 'TailwindCSS']),
-    new MainSoftSkill('JavaScript', '03.04.2022', ['ES6', 'read book Kyle Simpson and other']),
-    new MinimalSoftSkill('Gulp'),
-    new MinimalSoftSkill('Webpack'),
-    new MinimalSoftSkill('NODE JS'),
-    new MinimalSoftSkill('Php'),
-    new MinimalSoftSkill('joomla, wordpress'),
-    new MainSoftSkill('Vue3'),
-    new MainSoftSkill('Figma'),
-    new ExtraSoftSkill('Google Sheets'),
-    new ExtraSoftSkill('SQL'),
-    new ExtraSoftSkill('React'),
-    new ExtraSoftSkill('GIT', '04.2022', ''),
-    new ExtraSoftSkill('Ag-Grid'),
+    ],
+
+    [
+      new BasicTechSkill('TypeScript', '', 'mdi-language-typescript'),
+      new BasicTechSkill('NODE JS', '', 'mdi-nodejs'),
+      new BasicTechSkill('Gulp', '', gulp),
+      new BasicTechSkill('Webpack', '', 'mdi-webpack'),
+    ],
+    [
+      new FullTechSkill('PHP', '2012', '', 'mdi-language-php'),
+      new FullTechSkill('wordpress', '2012', '', 'mdi-wordpress'),
+      new FullTechSkill('joomla', '2012', '', joomla),
+    ],
   ]
 
-  const softSkills = [
-    {
-      title: 'HTML',
-      started: '2014',
-      hint: '',
-      rate: '1',
-    },
-    {
-      title: 'CSS',
-      hint: ['SASS', 'Bootstrap 5', 'TailwindCSS'],
-      rate: '1',
-    },
-    {
-      title: 'JS',
-      hint: ['ES6', 'read book Kyle Simpson and other'],
-      rate: '1',
-    },
-    {
-      title: 'GIT'
-    },
-    {
-      title: 'Gulp'
-    },
-    {
-      title: 'Webpack'
-    },
-    {
-      title: 'Google Sheets'
-    },
-    {
-      title: 'SQL'
-    },
-    {
-      title: 'NODE JS'
-    },
-    {
-      title: 'Vue3'
-    },
-    {
-      title: 'React'
-    },
-    {
-      title: 'Figma'
-    },
-    {
-      title: 'Ag-Grid'
-    },
-    {
-      title: 'Php',
-      hint: 'joomla, wordpress'
-    },
-  ]
+  // const softSkills = [
+  //   {
+  //     title: 'HTML',
+  //     started: '2014',
+  //     hint: '',
+  //     rate: '1',
+  //   },
+  //   {
+  //     title: 'CSS',
+  //     hint: ['SASS', 'Bootstrap 5', 'TailwindCSS'],
+  //     rate: '1',
+  //   },
+  //   {
+  //     title: 'JS',
+  //     hint: ['ES6', 'read book Kyle Simpson and other'],
+  //     rate: '1',
+  //   },
+  //   {
+  //     title: 'GIT'
+  //   },
+  //   {
+  //     title: 'Gulp'
+  //   },
+  //   {
+  //     title: 'Webpack'
+  //   },
+  //   {
+  //     title: 'Google Sheets'
+  //   },
+  //   {
+  //     title: 'SQL'
+  //   },
+  //   {
+  //     title: 'NODE JS'
+  //   },
+  //   {
+  //     title: 'Vue3'
+  //   },
+  //   {
+  //     title: 'React'
+  //   },
+  //   {
+  //     title: 'Figma'
+  //   },
+  //   {
+  //     title: 'Ag-Grid'
+  //   },
+  //   {
+  //     title: 'Php',
+  //     hint: 'joomla, wordpress'
+  //   },
+  // ]
 
-  class HardSkill {
+  class SoftSkill {
     constructor(title, type = null, desc = '',) {
       this.title = title;
       this.type = type;
@@ -108,26 +119,21 @@ export default function () {
 
 
 
-  const hardSkills = [
-    [new HardSkill('Orderly', 1),
-    new HardSkill('Responsibility', 1),
-    new HardSkill('Punctuality', 1),
-    ],
-    [new HardSkill('Communication', 2),
-    new HardSkill('Stress resistance', 2),
-    new HardSkill('Teamwork', 2),
-    ], [
-      new HardSkill('Creativity', 3),
-    ], [new HardSkill('Self-development', 4),
-    new HardSkill('Attention to detail', 4),
-    new HardSkill('Persistence', 4),
-    ]
+  const softSkills = [
+    // new SoftSkill('Orderly', 1),
+    new SoftSkill('Communication', 1),
+    new SoftSkill('Teamwork', 1),
+
+    new SoftSkill('Adaptability', 2),
+    new SoftSkill('Flexibility', 2),
+
+    new SoftSkill('Patience', 3),
+    new SoftSkill('Self-Motivation', 3),
+
+    new SoftSkill('Critical Thinking', 4),
+    new SoftSkill('Analytical Thinking', 4),
+
   ]
-
-  // const hardSkillsDesc = [
-  //   'I enjoy completing tasks on time and never being late. I am always looking for ways to improve my productivity and efficiency.',
-
-  // ]
   // Orderly
   // Responsibility
   // Punctuality
@@ -141,5 +147,8 @@ export default function () {
   // Self-development
   // Attention to detail
   // Persistence
-  return { softSkills, hardSkills, softSkillsClass }
+  return {
+    techSkillsClass,
+    softSkills
+  }
 }

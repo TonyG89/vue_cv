@@ -8,7 +8,7 @@
 import '@mdi/font/css/materialdesignicons.css'
 import 'material-icons-font/material-icons-font.css';
 import 'vuetify/styles'
-import iTelegram from '@/components/iTelegram.vue'
+import iTelegram from '@/components/icons/iTelegram.vue'
 
 // Composables
 import { createVuetify } from 'vuetify'
