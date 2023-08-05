@@ -60,7 +60,7 @@ import { hobby, education, experience, aboutMe } from "@/data";
     }
   }
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     transition: transform 0.5s linear;
     > div {
       //:not(:last-child)
