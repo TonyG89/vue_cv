@@ -1,7 +1,6 @@
 <template>
   <v-main class="bgImg ml-4 w-50">
     <v-container fluid>
-      <TheoryAndPracticeBlock :data="theoryAndPractice"/>
       <HeroBlock class="mb-10" :data="aboutMe" />
       <!-- BLOCK 2 -->
       <div class="d-flex align-baseline">
@@ -14,20 +13,8 @@
         <HobbyBlock title="hobby" :data="hobby" />
       </div>
       <!--  -->
+      <TheoryAndPracticeBlock :data="theoryAndPractice" />
       <!--  -->
-      <v-row>
-        <v-col cols="12" md="6">
-          <v-card class="contact-card" dark>
-            <v-card-title class="white--text">Theory & Practice</v-card-title>
-            <v-card-text class="white--text">
-              блок про литерату, курсы
-            </v-card-text>
-            <v-card-text class="white--text">
-              мое портфолию ссылка на его.
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
     </v-container>
   </v-main>
 </template>
@@ -47,7 +34,6 @@ import {
   aboutMe,
   theoryAndPractice,
 } from "@/data";
-
 </script>
 
 <style lang="scss">

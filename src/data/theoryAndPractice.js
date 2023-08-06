@@ -18,22 +18,23 @@ class Book {
 
 const books = [
   [
-    new Book('Kyle Simpson', 'You Don’t Know JS', ["Up & Going", "Scope & Closures"]),
-    new Book()
+    new Book('Kyle Simpson', 'You Don’t Know JS', "Up & Going"),
+    new Book('Kyle Simpson', 'You Don’t Know JS', "Scope & Closures"),
+    new Book('Vl. Dronov', 'JavaScript and AJAX in Web-Design')
   ],
   [
-    new Book('Kyle Simpson', 'You Don’t Know JS', [
-      "this & Object Prototypes",
-      "Types & Grammar",
-      "Async & Performance",
-      "ES6 & Beyond",
-    ]),
-
+    new Book('Kyle Simpson', 'You Don’t Know JS', "this & Object Prototypes"
+    ),
+    // "Types & Grammar",
+    // "Async & Performance",
+    // "ES6 & Beyond",
+    new Book('Il. Kanton', 'Language Javascript'),
+    new Book('Erik Hanchett', 'Vue.js in Action')
   ],
 ]
 
 const bookStatus = ['readed', 'in progress']
-
+console.log(bookStatus)
 const bookCourses = []
 
 // console.log(parseCodeTime(2592000000).then(data => data))
