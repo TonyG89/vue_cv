@@ -14,4 +14,11 @@ const addMethodToObject = (array, method) => {
   }, {})
 }
 
-export { addMethodToObject }
+const visitCounter = () => {
+  let visits = localStorage.getItem('visits') || 0
+  localStorage.setItem('visits', visits++)
+  console.log(visits)
+  return visits
+}
+
+export { addMethodToObject, visitCounter }

@@ -1,6 +1,7 @@
 <template>
   <v-main class="bgImg ml-4 w-50">
     <v-container fluid>
+      <TheoryAndPracticeBlock :data="theoryAndPractice"/>
       <HeroBlock class="mb-10" :data="aboutMe" />
       <!-- BLOCK 2 -->
       <div class="d-flex align-baseline">
@@ -12,6 +13,8 @@
         <WorkExperienceBlock :data="experience" />
         <HobbyBlock title="hobby" :data="hobby" />
       </div>
+      <!--  -->
+      <!--  -->
       <v-row>
         <v-col cols="12" md="6">
           <v-card class="contact-card" dark>
@@ -36,7 +39,15 @@ import EducationBlock from "./blocks/EducationBlock.vue";
 import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
 import HeroBlock from "./blocks/HeroBlock.vue";
 import BioBlock from "./blocks/BioBlock.vue";
-import { hobby, education, experience, aboutMe } from "@/data";
+import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
+import {
+  hobby,
+  education,
+  experience,
+  aboutMe,
+  theoryAndPractice,
+} from "@/data";
+
 </script>
 
 <style lang="scss">

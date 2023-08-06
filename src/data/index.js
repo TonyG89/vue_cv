@@ -5,6 +5,7 @@ import skills from './skills.js'
 import education from './education.js'
 import experience from './experience.js'
 import aboutMe from './aboutMe.js'
+import theoryAndPractice from './theoryAndPractice.js'
 
 
 export {
@@ -16,6 +17,7 @@ export {
   // OBJECT
   education,
   aboutMe,
+  theoryAndPractice,
   // FUNCTION
   skills,
 }

@@ -9,16 +9,18 @@
           :key="skill.title"
           class="mr-1 my-1 px-3"
         >
-          <v-icon :icon="skill.icon" class="mt-1 mr-2" />{{ skill.title }}
-          <!-- <v-tooltip activator="parent" location="right">
-            <div v-if="skill.started" class="text-red">
-              since:{{ skill.started }}(<span class="font-italic"
-                >{{ practiceTime(skill.started) }} </span
-              >)
-            </div>
-            <div v-if="skill.hint">{{ skill.hint }}</div>
-            <div class="curve" v-if="skill.stack">{{ skill.stack }}xxx</div>
-          </v-tooltip> -->
+          <div class="mt-1 mr-2">
+            <v-icon :icon="skill.icon" />{{ skill.title }}
+            <!-- <v-tooltip activator="parent" location="right">
+                  <div v-if="skill.started" class="text-red">
+                    since:{{ skill.started }}(<span class="font-italic"
+                    >{{ practiceTime(skill.started) }} </span
+                    >)
+                  </div>
+                  <div v-if="skill.hint">{{ skill.hint }}</div>
+                  <div class="curve" v-if="skill.stack">{{ skill.stack }}xxx</div>
+                </v-tooltip> -->
+          </div>
         </v-chip>
         <!-- <v-tooltip activator="parent" location="right">{{
           levelHint[ind + 1]

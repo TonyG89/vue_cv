@@ -5,7 +5,7 @@
       <v-tooltip v-if="group" activator="parent" location="right">
         {{ group.desc }}
       </v-tooltip>
-      <v-chip v-for="skill in skills" :key="skill.title" class="mr-1 my-1">
+      <v-chip v-for="skill in skills" :key="skill.title" class="mr-1 my-1 animate">
         {{ skill.title.toUpperCase() }}
       </v-chip>
       <!-- Добавьте другие скилы -->

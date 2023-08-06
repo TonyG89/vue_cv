@@ -21,7 +21,7 @@ const { softSkills, techSkillsClass } = skills();
 console.log(techSkillsClass);
 </script>
 
-<style>
+<style lang="scss">
 /* Стили как ранее */
 
 /* Анимации как ранее */
@@ -46,4 +46,5 @@ console.log(techSkillsClass);
 .side-menu-card:hover {
   background-color: #5c2e2e;
 }
+
 </style>
