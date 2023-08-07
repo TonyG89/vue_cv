@@ -1,17 +1,15 @@
 <template>
-  <v-card class="side-menu-card">
-    <v-card-title>{{ title }}</v-card-title>
-    <v-card-text>
-      <div v-for="(group, ind) in skills" :key="ind">
-        <v-chip
-          :color="chipColor(ind + 1)"
-          v-for="skill in group"
-          :key="skill.title"
-          class="mr-1 my-1 px-3"
-        >
-          <div class="mt-1 mr-2">
-            <v-icon :icon="skill.icon" />{{ skill.title }}
-            <!-- <v-tooltip activator="parent" location="right">
+  <SideBlockTemplate :title="title">
+    <div v-for="(group, ind) in skills" :key="ind">
+      <v-chip
+        :color="chipColor(ind + 1)"
+        v-for="skill in group"
+        :key="skill.title"
+        class="mr-1 my-1 px-3"
+      >
+        <div class="mt-1 mr-2">
+          <v-icon :icon="skill.icon" />{{ skill.title }}
+          <!-- <v-tooltip activator="parent" location="right">
                   <div v-if="skill.started" class="text-red">
                     since:{{ skill.started }}(<span class="font-italic"
                     >{{ practiceTime(skill.started) }} </span
@@ -20,17 +18,17 @@
                   <div v-if="skill.hint">{{ skill.hint }}</div>
                   <div class="curve" v-if="skill.stack">{{ skill.stack }}xxx</div>
                 </v-tooltip> -->
-          </div>
-        </v-chip>
-        <!-- <v-tooltip activator="parent" location="right">{{
+        </div>
+      </v-chip>
+      <!-- <v-tooltip activator="parent" location="right">{{
           levelHint[ind + 1]
         }}</v-tooltip> -->
-      </div>
-    </v-card-text>
-  </v-card>
+    </div>
+  </SideBlockTemplate>
 </template>
 
 <script setup>
+import SideBlockTemplate from "../ui/SideBlockTemplate.vue";
 const props = defineProps({
   title: {
     type: String,

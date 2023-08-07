@@ -1,10 +1,10 @@
 <template>
-  <div class="w-25" app permanent>
+  <div class="sideBlock" app permanent>
     <!-- БЛОК: Фотография и контакты -->
     <ContactsBlock :contacts="contacts" />
-    <TechSkillsBlock title="Soft Skills" :skills="techSkillsClass" />
-    <SoftSkillsBlock title="Hard Skills" :skills="softSkills" />
-    <!-- <SoftSkillsBlock title="techSkillsClass" :skills="techSkillsClass" /> -->
+    <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
+    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
+    <EducationSideBlock title="Education" :data="education" />
     <!-- Английский язык -->
     <LanguagesBlock />
   </div>
@@ -16,7 +16,9 @@ import ContactsBlock from "@/components/blocks/ContactsBlock.vue";
 import TechSkillsBlock from "@/components/blocks/TechSkillsBlock.vue";
 import SoftSkillsBlock from "@/components/blocks/SoftSkillsBlock.vue";
 import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
-import { contacts, skills } from "@/data/";
+import EducationSideBlock from "./blocks/EducationSideBlock.vue";
+import { contacts, skills, education } from "@/data/";
+
 const { softSkills, techSkillsClass } = skills();
 </script>
 
@@ -26,23 +28,16 @@ const { softSkills, techSkillsClass } = skills();
 /* Анимации как ранее */
 
 .side-menu-card {
-  margin: 16px;
+  margin: 4px 16px;
   padding: 16px;
-  background-color: #333333;
-  color: #ffffff;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: rgb(var(--v-theme-bgFirst));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: slideInLeft 1s;
 }
 
-.side-menu-card:first-child {
-  margin-top: 100px; /* Отступ для первого элемента */
-}
-
-.side-menu-card:not(:first-child) {
-  margin-top: 24px; /* Отступ между элементами */
-}
-
 .side-menu-card:hover {
-  background-color: #5c2e2e;
+  background-color: rgb(var(--v-theme-bgFirst));
 }
 </style>

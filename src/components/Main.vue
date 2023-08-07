@@ -1,21 +1,14 @@
 <template>
-  <v-main class="bgImg ml-4 w-50">
-    <v-container fluid>
-      <HeroBlock class="mb-10" :data="aboutMe" />
+  <v-main class="bgImg w-75">
       <!-- BLOCK 2 -->
-      <div class="d-flex align-baseline">
-        <BioBlock :data="aboutMe" />
-        <EducationBlock :data="education" />
-      </div>
+      <BioBlock :data="aboutMe" />
+      <!-- <EducationBlock :data="education" /> -->
       <!-- BLOCK 3 -->
-      <div class="d-flex align-baseline my-8">
-        <WorkExperienceBlock :data="experience" />
-        <HobbyBlock title="hobby" :data="hobby" />
-      </div>
+      <WorkExperienceBlock :data="experience" />
+      <HobbyBlock title="hobby" :data="hobby" />
       <!--  -->
       <TheoryAndPracticeBlock :data="theoryAndPractice" />
       <!--  -->
-    </v-container>
   </v-main>
 </template>
 
@@ -24,7 +17,6 @@ import TextBlock from "./blocks/TextBlock.vue";
 import HobbyBlock from "./blocks/HobbyBlock.vue";
 import EducationBlock from "./blocks/EducationBlock.vue";
 import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
-import HeroBlock from "./blocks/HeroBlock.vue";
 import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
 import {
@@ -41,6 +33,8 @@ import {
   background-color: #333333;
   text-align: center;
   animation: fadeIn 1s;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .cardBlock {

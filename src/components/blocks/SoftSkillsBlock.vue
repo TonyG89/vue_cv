@@ -1,19 +1,21 @@
 <template>
-  <v-card class="side-menu-card">
-    <v-card-title>{{ title }}</v-card-title>
-    <v-card-text>
-      <v-tooltip v-if="group" activator="parent" location="right">
-        {{ group.desc }}
-      </v-tooltip>
-      <v-chip v-for="skill in skills" :key="skill.title" class="mr-1 my-1 animate">
-        {{ skill.title.toUpperCase() }}
-      </v-chip>
-      <!-- Добавьте другие скилы -->
-    </v-card-text>
-  </v-card>
+  <SideBlockTemplate :title="title">
+    <v-tooltip v-if="group" activator="parent" location="right">
+      {{ group.desc }}
+    </v-tooltip>
+    <v-chip
+      v-for="skill in skills"
+      :key="skill.title"
+      class="mr-1 my-1 animate"
+    >
+      {{ skill.title.toUpperCase() }}
+    </v-chip>
+    <!-- Добавьте другие скилы -->
+  </SideBlockTemplate>
 </template>
 
 <script setup>
+import SideBlockTemplate from "@/components/ui/SideBlockTemplate.vue";
 const props = defineProps({
   title: {
     type: String,

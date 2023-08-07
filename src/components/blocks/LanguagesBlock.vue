@@ -1,6 +1,5 @@
 <template>
-  <v-card class="side-menu-card">
-    <v-card-title>Languages</v-card-title>
+  <SideBlockTemplate title="Languages">
     <v-card-text>
       <div
         class="d-flex animate fitContent"
@@ -12,16 +11,18 @@
         </v-tooltip>
         <v-icon size="x-large">{{ `fi-${lang.icon}` }}</v-icon>
         <h3 class="ml-2 mt-1 text-uppercase">
-          {{ lang.title }} - <span class="font-weight-thin">{{ lang.level }}</span>
+          {{ lang.title }} -
+          <span class="font-weight-thin">{{ lang.level }}</span>
         </h3>
       </div>
     </v-card-text>
-  </v-card>
+  </SideBlockTemplate>
 </template>
 
 <script setup>
 import { languages } from "@/data";
 import "country-flag-icons";
+import SideBlockTemplate from "../ui/SideBlockTemplate.vue";
 </script>
 
 <style lang="scss" scoped>

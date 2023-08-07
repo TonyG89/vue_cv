@@ -1,84 +1,81 @@
 <template>
-  <v-row class="fitContent">
-    <v-col>
-      <h1 class="text-left px-4 text-textFirst bg-second fitContent">
-        Work Experience
-      </h1>
-      <v-card class="header-card hidden-xs lgBlock" width="600px" dark>
-        <div class="ma-2 w-auto" v-for="job in data" :key="job.title">
-          <div class="d-flex justify-space-around w-150">
-            <!-- TIMELINE  -->
-            <div class="text-third d-flex flex-column justify-center">
-              <h6>{{ job.dates[1] }}</h6>
-              <div class="dot"></div>
-              <h6>{{ job.dates[0] }}</h6>
-            </div>
-
-            <v-card class="my-1 pa-2 defaultWidth ">
-              <v-row
-                class="height d-flex justify-space-between align-center mx-0"
-                @click="flags[job.place] = !flags[job.place]"
-              >
-                <v-col class="align-self-end" v-if="job?.logo" cols="3">
-                  <img class="logo" :src="job.logo" />
-                </v-col>
-                <v-col
-                  cols="9"
-                  class="align-self-start text-right d-flex flex-column"
-                >
-                  <h3>
-                    {{ job.title?.toUpperCase() }}
-                  </h3>
-                  <h5 class="text-third">
-                    {{ job.during }}
-                  </h5>
-                  <!-- <div class="justify-space-between d-flex flex-column">
-                      <p>company:</p> -->
-                  <h4>{{ job.place }}</h4>
-                  <h6 v-if="job.type">
-                    <v-icon
-                      class=""
-                      :icon="`mdi-${
-                        job.type === 'product' ? 'cart' : 'account-group'
-                      }`"
-                      size="15"
-                    />
-                    {{ job.type }}
-                  </h6>
-                  <h6 class="mt-2 text-third justify-self-end">
-                    {{ job.location }}
-                  </h6>
-                </v-col>
-                <v-divider v-if="flags[job.place]" />
-                <v-col class="text-left">
-                  <v-expand-transition>
-                    <div v-show="flags[job.place]">
-                      {{ job.text }}
-                    </div>
-                  </v-expand-transition>
-                  <v-divider class="my-2" v-if="flags[job.place]" />
-
-                  <v-chip
-                    v-for="(skill, ind) of job.skills?.split(', ')"
-                    :key="ind"
-                    color="second"
-                    label
-                    size="small"
-                    class="ma-1"
-                    >{{ skill }}</v-chip
-                  ></v-col
-                >
-              </v-row>
-            </v-card>
+  <TemplateBlock >
+    <v-card class="header-card hidden-xs lgBlock" width="600px" dark>
+      <div class="ma-2 w-auto" v-for="job in data" :key="job.title">
+        <div class="d-flex justify-space-around w-150">
+          <!-- TIMELINE  -->
+          <div class="text-third d-flex flex-column justify-center">
+            <h6>{{ job.dates[1] }}</h6>
+            <div class="dot"></div>
+            <h6>{{ job.dates[0] }}</h6>
           </div>
+
+          <v-card class="my-1 pa-2 defaultWidth">
+            <v-row
+              class="height d-flex justify-space-between align-center mx-0"
+              @click="flags[job.place] = !flags[job.place]"
+            >
+              <v-col class="align-self-end" v-if="job?.logo" cols="3">
+                <img class="logo" :src="job.logo" />
+              </v-col>
+              <v-col
+                cols="9"
+                class="align-self-start text-right d-flex flex-column"
+              >
+                <h3>
+                  {{ job.title?.toUpperCase() }}
+                </h3>
+                <h5 class="text-third">
+                  {{ job.during }}
+                </h5>
+                <!-- <div class="justify-space-between d-flex flex-column">
+                      <p>company:</p> -->
+                <h4>{{ job.place }}</h4>
+                <h6 v-if="job.type">
+                  <v-icon
+                    class=""
+                    :icon="`mdi-${
+                      job.type === 'product' ? 'cart' : 'account-group'
+                    }`"
+                    size="15"
+                  />
+                  {{ job.type }}
+                </h6>
+                <h6 class="mt-2 text-third justify-self-end">
+                  {{ job.location }}
+                </h6>
+              </v-col>
+              <v-divider v-if="flags[job.place]" />
+              <v-col class="text-left">
+                <v-expand-transition>
+                  <div v-show="flags[job.place]">
+                    {{ job.text }}
+                  </div>
+                </v-expand-transition>
+                <v-divider class="my-2" v-if="flags[job.place]" />
+
+                <v-chip
+                  v-for="(skill, ind) of job.skills?.split(', ')"
+                  :key="ind"
+                  color="second"
+                  label
+                  size="small"
+                  class="ma-1"
+                  >{{ skill }}</v-chip
+                ></v-col
+              >
+            </v-row>
+          </v-card>
         </div>
-      </v-card>
-    </v-col>
-  </v-row>
+      </div>
+    </v-card>
+  </TemplateBlock>
   <components is="Block" />
 </template>
 
 <script setup>
+import TemplateBlock from "@/components/ui/BlockTemplate.vue";
+
 import { reactive } from "vue";
 import { defineComponent } from "vue";
 

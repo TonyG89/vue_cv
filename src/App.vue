@@ -1,8 +1,9 @@
 <template>
   <v-app class="wrapper">
+    <HeroBlock />
     <div class="d-flex">
-      <SideBlock />
-      <Main />
+      <SideBlock class="afterHeader" />
+      <Main class="afterHeader" />
     </div>
     <v-footer>'copyleft (C)'</v-footer>
   </v-app>
@@ -12,6 +13,7 @@
 import Main from "@/components/Main.vue";
 import SideBlock from "@/components/SideBlock.vue";
 import VisitCounter from "@/services/VisitCounter.vue";
+import HeroBlock from "@/components/blocks/HeroBlock.vue";
 </script>
 
 <style lang="scss">
@@ -26,10 +28,20 @@ import VisitCounter from "@/services/VisitCounter.vue";
   font-family: cursive;
   font-family: Arial, Helvetica, sans-serif;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  // font-size: 16px;
+}
+
+.sideBlock {
+  max-width: 25%;
+}
+
+.afterHeader {
+  padding-top: 350px;
 }
 
 .bgImg {
   background-image: url("/bg.svg");
+  background: rgb(var(--v-theme-bgFirst));
   background-size: cover;
   background-position: center;
   min-height: 300px; /* Установите высоту контейнера */
@@ -74,14 +86,14 @@ import VisitCounter from "@/services/VisitCounter.vue";
 
 .wrapper {
   display: flex;
-  height: 100%;
-  max-width: 1440px;
+  // height: 100%;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
 .hover {
   &:hover {
-    background-color: var(--v-second-base);
+    background-color: rgb(var(--v-theme-bgFirst));
 
     & a {
       transition: all 0.3s ease;
@@ -96,6 +108,6 @@ import VisitCounter from "@/services/VisitCounter.vue";
 
 a {
   text-decoration: none;
-  color: var(--v-test-1-base);
+  color: rgb(var(--v-theme-test));
 }
 </style>
