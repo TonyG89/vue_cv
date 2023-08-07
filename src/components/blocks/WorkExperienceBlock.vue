@@ -1,5 +1,5 @@
 <template>
-  <TemplateBlock>
+  <TemplateBlock title="Work experience">
     <v-card class="header-card hidden-xs" dark>
       <div class="ma-2 w-auto" v-for="job in data" :key="job.title">
         <div class="d-flex justify-start w-150">
@@ -74,6 +74,7 @@ import TemplateBlock from "@/components/ui/BlockTemplate.vue";
 import TimeArrowLine from "@/components/entities/TimeArrowLine.vue";
 import { reactive } from "vue";
 import { defineComponent } from "vue";
+import { experience } from "@/data";
 
 const flags = reactive({});
 

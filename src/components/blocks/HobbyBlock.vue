@@ -14,7 +14,7 @@
           <v-icon
             :icon="`mdi-${item.icon}`"
             size="16"
-            class="mb-2 mx-1 mr-2 icon"
+            class="mb-3 mr-2 icon"
           >
           </v-icon>
         </div>

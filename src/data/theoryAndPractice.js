@@ -1,11 +1,11 @@
 
 const codeTimeUrl = "https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D17123%26project%3D%26in%3D"
 // const onlyTimeUrl = "https://api.codetime.dev/shield?id=17123&project=&in="
-
 const codeTime = [
   codeTimeUrl + 86400000,
   codeTimeUrl + 604800000,
   codeTimeUrl + 2592000000,
+  codeTimeUrl + '%26in%3D0',
 ]
 
 class Book {
@@ -36,7 +36,7 @@ const bookStatus = ['readed', 'in progress']
 
 console.log(bookStatus)
 
-const bookCourses = ['Kottans', ]
+const bookCourses = ['Kottans',]
 
 
 // console.log(parseCodeTime(2592000000).then(data => data))

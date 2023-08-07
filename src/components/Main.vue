@@ -1,14 +1,16 @@
 <template>
   <v-main class="bgImg w-75">
-      <!-- BLOCK 2 -->
-      <BioBlock :data="aboutMe" />
-      <!-- <EducationBlock :data="education" /> -->
-      <!-- BLOCK 3 -->
-      <HobbyBlock title="hobby" :data="hobby" />
-      <WorkExperienceBlock :data="experience" />
-      <!--  -->
-      <TheoryAndPracticeBlock :data="theoryAndPractice" />
-      <!--  -->
+    <!-- BLOCK 2 -->
+    <BioBlock :data="aboutMe" />
+    <!-- <EducationBlock :data="education" /> -->
+    <!-- BLOCK 3 -->
+    <HobbyBlock title="hobby" :data="hobby" />
+    <WorkExperienceBlock :data="experience" />
+    <!--  -->
+    <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" />
+    <!-- <Portfolio title="Portfolio" /> -->
+    <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
+    <!--  -->
   </v-main>
 </template>
 
@@ -19,6 +21,8 @@ import EducationBlock from "./blocks/EducationBlock.vue";
 import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
 import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
+import Portfolio from "./blocks/PortfolioBlock.vue";
+import StatisticsBlock from "./blocks/StatisticsBlock.vue";
 import {
   hobby,
   education,

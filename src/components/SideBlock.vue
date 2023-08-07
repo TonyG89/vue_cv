@@ -5,6 +5,7 @@
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
     <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
     <EducationSideBlock title="Education" :data="education" />
+    <PortfolioSideBlock title="Portfolio"/>
     <!-- Английский язык -->
     <LanguagesBlock />
   </div>
@@ -17,6 +18,7 @@ import TechSkillsBlock from "@/components/blocks/TechSkillsBlock.vue";
 import SoftSkillsBlock from "@/components/blocks/SoftSkillsBlock.vue";
 import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
 import EducationSideBlock from "./blocks/EducationSideBlock.vue";
+import PortfolioSideBlock from "./blocks/PortfolioSideBlock.vue";
 import { contacts, skills, education } from "@/data/";
 
 const { softSkills, techSkillsClass } = skills();
