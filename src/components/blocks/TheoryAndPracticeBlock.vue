@@ -27,17 +27,29 @@
         </v-card>
         <!-- TODO: API - CHECKTIME https://api.codetime.dev/shield?id=17123&project=&in=86400000 -->
         <v-card class="smBlock ma-4 text-left w-100">
-          <!-- Books:
-          <v-list class="border" v-for="(_, index) in data.books" :key="index">
-            <v-list v-for="(book, ind) in data.books[index]" :key="ind">
-              <div class="d-flex align-center">
-                <h5>{{ book.author }} -</h5>
-                <h5 class="mx-1">«{{ book.title }}»</h5>
-                <h6 v-if="book.desc">{{ `("${book.desc}")` }}</h6>
-              </div>
-            </v-list>
+          Books:
+          <v-list
+            class="border d-flex"
+            v-for="(_, index) in data.books"
+            :key="index"
+          >
+            <div
+              class="verticalText text-center text-uppercase"
+              :class="index ? 'bg-warning' : 'bg-green'"
+            >
+              {{ bookStatus[index] }}
+            </div>
+            <div>
+              <v-list v-for="(book, ind) in data.books[index]" :key="ind">
+                <div class="align-center">
+                  <h5>{{ book.author }} -</h5>
+                  <h5 class="mx-1">«{{ book.title }}»</h5>
+                  <h6 v-if="book.desc">{{ `("${book.desc}")` }}</h6>
+                </div>
+              </v-list>
+            </div>
           </v-list>
-          <div class="">
+          <!-- <div class="">
             <h6>Who<span>what</span></h6>
             <h6>
               Online-courses: kottans<span>(Stage0 - 2022)</span>, MyWay,
@@ -64,6 +76,8 @@
 </template>
 
 <script setup>
+const bookStatus = ["readed", "in progress"];
+
 defineProps({
   title: {
     type: String,
@@ -93,6 +107,11 @@ defineProps({
   }
 }
 
+.verticalText {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
 .portfolio {
   height: 200px !important;
   background: url("/port.jpg");
@@ -101,7 +120,7 @@ defineProps({
   transition: all 1.5s ease-out;
   &:hover {
     transform: scale(1.1);
-    transform-box:fill-box;
+    transform-box: fill-box;
   }
 }
 

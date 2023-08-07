@@ -32,10 +32,12 @@ const books = [
     new Book('Erik Hanchett', 'Vue.js in Action')
   ],
 ]
-
 const bookStatus = ['readed', 'in progress']
+
 console.log(bookStatus)
-const bookCourses = []
+
+const bookCourses = ['Kottans', ]
+
 
 // console.log(parseCodeTime(2592000000).then(data => data))
 

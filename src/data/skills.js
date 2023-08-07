@@ -40,7 +40,7 @@ export default function () {
       new BasicTechSkill('SQL', '', 'mdi-database'),
       new FullTechSkill('React', '07.2022', '', 'mdi-react'),
       new FullTechSkill('Ag-Grid', '02.2023', '', agGrid),
-
+      new FullTechSkill('Linux', '2006', 'UBUNTU 2006-2009', 'mdi-linux'),
     ],
 
     [
