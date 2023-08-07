@@ -1,7 +1,7 @@
 <template>
   <div class="w-25" app permanent>
     <!-- БЛОК: Фотография и контакты -->
-    <ContactBlock :contacts="contacts" />
+    <ContactsBlock :contacts="contacts" />
     <TechSkillsBlock title="Soft Skills" :skills="techSkillsClass" />
     <SoftSkillsBlock title="Hard Skills" :skills="softSkills" />
     <!-- <SoftSkillsBlock title="techSkillsClass" :skills="techSkillsClass" /> -->
@@ -12,13 +12,12 @@
 
 <script setup>
 import { ref } from "vue";
-import ContactBlock from "@/components/blocks/ContactBlock.vue";
+import ContactsBlock from "@/components/blocks/ContactsBlock.vue";
 import TechSkillsBlock from "@/components/blocks/TechSkillsBlock.vue";
 import SoftSkillsBlock from "@/components/blocks/SoftSkillsBlock.vue";
 import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
 import { contacts, skills } from "@/data/";
 const { softSkills, techSkillsClass } = skills();
-console.log(techSkillsClass);
 </script>
 
 <style lang="scss">
@@ -46,5 +45,4 @@ console.log(techSkillsClass);
 .side-menu-card:hover {
   background-color: #5c2e2e;
 }
-
 </style>
