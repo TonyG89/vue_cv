@@ -15,7 +15,7 @@
 <script setup>
 import { aboutMe } from "@/data/";
 defineProps({
-  photoUrl: { type: String, default: "./me.jpg" },
+  photoUrl: { type: String, default: "/me.jpg" },
   data: {
     type: Object,
     require: true,
@@ -37,7 +37,7 @@ defineProps({
 
 .avatar {
   box-sizing: content-box;
-  background: url("./me.jpg");
+  background: url("/me.jpg");
   background-size: contain;
   border-radius: 50%;
   height: 170px;

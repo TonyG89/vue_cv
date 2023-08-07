@@ -5,7 +5,7 @@
       <SideBlock class="afterHeader" />
       <Main class="afterHeader" />
     </div>
-    <v-footer>'copyleft (C)'</v-footer>
+    <!-- <v-footer>'copyleft (C)'</v-footer> -->
   </v-app>
 </template>
 

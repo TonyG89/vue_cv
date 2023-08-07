@@ -4,8 +4,8 @@
       <BioBlock :data="aboutMe" />
       <!-- <EducationBlock :data="education" /> -->
       <!-- BLOCK 3 -->
-      <WorkExperienceBlock :data="experience" />
       <HobbyBlock title="hobby" :data="hobby" />
+      <WorkExperienceBlock :data="experience" />
       <!--  -->
       <TheoryAndPracticeBlock :data="theoryAndPractice" />
       <!--  -->

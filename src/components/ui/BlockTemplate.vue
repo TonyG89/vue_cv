@@ -7,7 +7,7 @@
       >
         {{ title }}
       </h2>
-      <v-card class="header-card d-flex" width="100%" dark>
+      <v-card class="bg-bgThird d-flex flex-wrap" width="100%" dark>
         <slot></slot>
       </v-card>
     </v-col>
