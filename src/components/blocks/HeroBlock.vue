@@ -2,12 +2,15 @@
   <v-card class="heroCard text-textFirst bg-bgThird position-absolute">
     <v-row>
       <v-col class="sideBlock">
-        <div class="avatar mx-auto" :style="`border-color: ${bgFirst}`" />
+        <div
+          class="avatar imgAnimate mx-auto"
+          :style="`border-color: ${bgFirst}`"
+        />
       </v-col>
       <v-col class="text-left ml-3 mt-5 d-flex flex-column-reverse justify-end">
         <!-- BLOCK-REVERSE -->
-        <h1 class="text-textThird">{{ aboutMe.vacancy }}</h1>
-        <h2 class="text-uppercase">{{ aboutMe.name }}</h2>
+        <h1 class="text-textThird textAnimate">{{ aboutMe.vacancy }}</h1>
+        <h2 class="text-uppercase textAnimate">{{ aboutMe.name }}</h2>
       </v-col>
     </v-row>
   </v-card>
@@ -56,5 +59,15 @@ h2 {
   max-width: 170px;
   margin-top: -12px;
   border: rgb(var(--v-theme-bgSecond)) 20px solid;
+}
+
+.textAnimate {
+  animation: bounce 1s;
+}
+.imgAnimate {
+  animation: appear 1s;
+}
+.blockAnimate {
+  animation: fadeInLeft 1s;
 }
 </style>

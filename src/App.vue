@@ -5,10 +5,12 @@
       <SideBlock class="afterHeader" />
       <Main class="afterHeader" />
     </div>
-    <v-footer color="primary" class="bg-grey-lighten-1"
-      ><div class="">
+    <v-footer color="bgThird" border
+      ><div class="mx-auto">
         <a href="https://www.buymeacoffee.com/glzk"
-          ><v-icon>mdi-coffee</v-icon>created by Tony</a
+          ><h3 class="text-textFirst">
+            <v-icon>mdi-coffee</v-icon> created by Tony
+          </h3></a
         >
       </div>
     </v-footer>
@@ -62,7 +64,7 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 }
 
 .noBorders {
-  border: red 12px solid;
+  border-top: rgb(162, 7, 7) 12px solid;
 }
 
 .smBlock {
@@ -123,5 +125,76 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 a {
   text-decoration: none;
   color: rgb(var(--v-theme-test));
+}
+
+.animate {
+  transition: all 1.2s ease-out;
+  > div {
+    transition: all 1.2s ease-out;
+    .icon {
+      transition: all 1.2s ease-out;
+    }
+  }
+  &:hover {
+    transform: translateY(-2px);
+    transition: transform 0.5s linear;
+    > div {
+      //:not(:last-child)
+      // filter: invert(100%);
+      transition: all 0.5s ease-in;
+    }
+    .icon {
+      transform: scale(1.2);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(0.9);
+
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-2200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  
 }
 </style>

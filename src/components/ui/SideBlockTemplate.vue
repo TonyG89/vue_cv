@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row class="blockAnimate">
     <v-col class="fitContent px-6">
       <h3
         v-if="title"
