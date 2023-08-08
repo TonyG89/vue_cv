@@ -1,6 +1,6 @@
 <template>
   <BlockTemplate :title="title">
-    <v-card class="ma-4 pa-2 bg-bgThird text-left w-100 d-flex">
+    <div class="ma-4 pa-2 text-left w-100 d-flex">
       <div>
         <h3>
           Development time in VSCode
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-    </v-card>
+    </div>
   </BlockTemplate>
 </template>
 
@@ -48,10 +48,10 @@ const daysLeft = (moment() - moment("20230414")) / 86400000;
 const stringDaysLeft = `/ ${parseInt(daysLeft)} Days`;
 
 const urlLanguages =
-  "https://github-readme-stats.vercel.app/api/top-langs/?username=TonyG89&show_icons=true&hide=true&count_private=true&title_color=5EFF09&text_color=4f7f35&icon_color=4f7f35&bg_color=1c1917&show_icons=true&layout=compact";
+  "https://github-readme-stats.vercel.app/api/top-langs/?username=TonyG89&show_icons=true&hide=true&count_private=true&title_color=263238&text_color=263238&icon_color=E65100&bg_color=ECEFF1&show_icons=true&layout=compact";
 
 const urlActivities =
-  "https://github-readme-streak-stats.herokuapp.com/?user=TonyG89&stroke=c0c0c0&background=1c1917&ring=4f7f35&fire=5EFF09&currStreakNum=c0c0c0&currStreakLabel=4f7f35&sideNums=c0c0c0&sideLabels=4f7f35&dates=5EFF09";
+  "https://github-readme-streak-stats.herokuapp.com/?user=TonyG89&stroke=546E7A&background=ECEFF1&ring=CFD8DC&fire=546E7A&currStreakNum=263238&currStreakLabel=263238&sideNums=263238&sideLabels=263238&dates=546E7A";
 
 defineProps({
   data: {
@@ -66,14 +66,14 @@ defineProps({
 
 <style lang="scss" scoped>
 .extraBlock {
-  background: linear-gradient(#1284c5, #0072b3);
-  color: white;
-  font-size: 12px;
-  padding-right: 5px;
-  padding-bottom: 2px;
+  background: linear-gradient(#e7eaeb, #d5d8d9);
+  color: #444444;
+  font-size: 11px;
+  padding: 2px 6px 1px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  margin: -2px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: -6px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  // text-shadow: 0px 1px #333333;
 }
 </style>

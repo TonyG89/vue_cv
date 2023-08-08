@@ -1,5 +1,5 @@
 <template>
-  <div class="icon ">
+  <div class="icon">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
@@ -65,9 +65,14 @@
 defineProps({
   color: {
     type: String,
-    default: "#CDDC39",
+    default: "#689F38",
   },
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.size {
+  width: 21px;
+  height: 21px;
+}
+</style>

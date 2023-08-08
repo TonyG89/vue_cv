@@ -34,11 +34,15 @@ import {
 
 <style lang="scss">
 .header-card {
-  background-color: #333333;
   text-align: center;
-  animation: fadeIn 1s;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.blockAnimate {
+  div {
+    animation: fadeIn 1s;
+  }
 }
 
 .cardBlock {
@@ -59,7 +63,7 @@ import {
     transition: transform 0.5s linear;
     > div {
       //:not(:last-child)
-      filter: invert(100%);
+      // filter: invert(100%);
       transition: all 0.5s ease-in;
     }
     .icon {

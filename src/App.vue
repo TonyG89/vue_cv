@@ -19,15 +19,18 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 <style lang="scss">
 :root {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  /* font-family:'Times New Roman', Times, serif; */
-  /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-family: Tahoma;
-  font-family: monospace;
-  font-family: cursive;
-  font-family: Arial, Helvetica, sans-serif;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  // font-family: "Times New Roman", Times, serif;
+  // font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  // font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+  // font-family: Tahoma;
+
+  // font-family: monospace;
+  // font-family: cursive;
+  
+  // font-family: Arial, Helvetica, sans-serif;
+
+  // font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   // font-size: 16px;
 }
 
@@ -65,6 +68,10 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 
 .sizeText {
   font-size: 1.2rem;
+}
+
+.textJustify {
+  text-align: justify;
 }
 
 .cardSize {

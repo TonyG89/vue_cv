@@ -21,15 +21,18 @@ export default createVuetify({
         colors: {
           primary: '#CDDC39',
           secondary: '#DCE775',
-          first: '#9E9D24',
-          second: '#673AB7', //sideblock
-          third: '#F9A825', //blue-grey-darken-1
+
+          first: '#1B5E20',
+          second: '#689F38', //sideblock
+          third: '#9E9D24', //blue-grey-darken-1
+          fourth: '#78909C', //red
+
           background: '#546E7A', //deep-purple
           wrapper: '#CDDC39', //lime
           test: '#E65100',
           textFirst: '#263238', // hero
           textSecond: '#FFFDE7', // hero
-          textThird: '#607D8B',
+          textThird: '#546E7A',
           bgFirst: '#ECEFF1', //
           bgSecond: '#546E7A', // hero
           bgThird: '#CFD8DC', // hero

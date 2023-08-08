@@ -1,21 +1,19 @@
 <template>
   <SideBlockTemplate title="Languages">
-    <v-card-text>
-      <div
-        class="d-flex animate fitContent"
-        v-for="(lang, ind) in languages"
-        :key="lang.title"
-      >
-        <v-tooltip activator="parent">
-          <div class="hint">{{ lang.hint }}</div>
-        </v-tooltip>
-        <v-icon size="x-large">{{ `fi-${lang.icon}` }}</v-icon>
-        <h3 class="ml-2 mt-1 text-uppercase">
-          {{ lang.title }} -
-          <span class="font-weight-thin">{{ lang.level }}</span>
-        </h3>
-      </div>
-    </v-card-text>
+    <div
+      class="d-flex animate fitContent"
+      v-for="(lang, ind) in languages"
+      :key="lang.title"
+    >
+      <v-tooltip activator="parent">
+        <div class="hint">{{ lang.hint }}</div>
+      </v-tooltip>
+      <!-- <v-icon size="x-large">{{ `fi-${lang.icon}` }}</v-icon> -->
+      <h3 class="ml-2 mt-1 text-uppercase">
+        {{ lang.title }} -
+        <span class="font-weight-thin">{{ lang.level }}</span>
+      </h3>
+    </div>
   </SideBlockTemplate>
 </template>
 

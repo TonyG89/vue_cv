@@ -15,7 +15,7 @@
           target="_blank"
           class="d-flex text-textFirst font-weight-bold"
         >
-          <v-icon class="mr-2 w-20">
+          <v-icon class="mr-2 mt-1 w-20">
             <template v-if="contact.icon === 'telegram'">
               <iTelegram />
             </template>
@@ -33,10 +33,14 @@
           :key="contact.title"
           class="px-0"
         >
-          <v-btn style="width: 120px" class="hover">
-            <a :href="contact.link" class="text-textFirst" target="_blank">
-              <v-icon class="mr-2 w-20"> mdi-{{ contact.icon }}</v-icon
-              >{{ contact.title }}</a
+          <v-btn style="width: 100px" class="hover">
+            <a
+              :href="contact.link"
+              class="text-textFirst d-flex"
+              target="_blank"
+            >
+              <v-icon class="mr-2 w-20"> mdi-{{ contact.icon }}</v-icon>
+              <h5>{{ contact.title }}</h5></a
             >
           </v-btn>
         </v-list-item>

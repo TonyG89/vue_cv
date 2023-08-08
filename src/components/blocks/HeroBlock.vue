@@ -4,9 +4,10 @@
       <v-col class="sideBlock">
         <div class="avatar mx-auto" :style="`border-color: ${bgFirst}`" />
       </v-col>
-      <v-col class="text-left ml-10 mt-5">
+      <v-col class="text-left ml-3 mt-5 d-flex flex-column-reverse justify-end">
+        <!-- BLOCK-REVERSE -->
+        <h1 class="text-textThird">{{ aboutMe.vacancy }}</h1>
         <h2 class="text-uppercase">{{ aboutMe.name }}</h2>
-        <h4 class="text-textThird">{{ aboutMe.vacancy }}</h4>
       </v-col>
     </v-row>
   </v-card>
@@ -24,6 +25,17 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  font-size: 2rem;
+  margin-top: -20px;
+  // margin-bottom: 0px;
+}
+h2 {
+  font-size: 3.9rem;
+
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 .heroCard {
   margin-top: 100px;
   font-size: 2rem;

@@ -2,10 +2,10 @@
   <div class="sideBlock" app permanent>
     <!-- БЛОК: Фотография и контакты -->
     <ContactsBlock :contacts="contacts" />
-    <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
-    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
     <EducationSideBlock title="Education" :data="education" />
-    <PortfolioSideBlock title="Portfolio"/>
+    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
+    <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
+    <PortfolioSideBlock title="Portfolio" />
     <!-- Английский язык -->
     <LanguagesBlock />
   </div>
