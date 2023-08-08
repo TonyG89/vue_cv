@@ -1,7 +1,7 @@
 <template>
   <BlockTemplate :title="title">
-    <div class="ma-4 pa-2 text-left w-100 d-flex">
-      <div>
+    <v-row class="ma-4 pa-2 text-left w-100 d-flex">
+      <v-col>
         <h3>
           Development time in VSCode
           <span class="pr-1 text-textThird font-weight-thin"
@@ -19,8 +19,8 @@
             {{ stringDaysLeft }}</span
           >
         </div>
-      </div>
-      <div class="text-right">
+      </v-col>
+      <v-col class="text-right">
         <h3>
           GitHub Activities
           <span class="pr-1 text-textThird font-weight-thin"
@@ -31,12 +31,10 @@
         <div>
           <img :src="urlLanguages" />
           <img :src="urlActivities" />
-          <div>
-            <img src="https://kounter.tk/badge/TonyG89_cv" />
-          </div>
         </div>
-      </div>
-    </div>
+      </v-col>
+    </v-row>
+    <!-- <img src="https://kounter.tk/badge/TonyG89_cv" /> -->
   </BlockTemplate>
 </template>
 

@@ -5,7 +5,13 @@
       <SideBlock class="afterHeader" />
       <Main class="afterHeader" />
     </div>
-    <!-- <v-footer>'copyleft (C)'</v-footer> -->
+    <v-footer color="primary" class="bg-grey-lighten-1"
+      ><div class="">
+        <a href="https://www.buymeacoffee.com/glzk"
+          ><v-icon>mdi-coffee</v-icon>created by Tony</a
+        >
+      </div>
+    </v-footer>
   </v-app>
 </template>
 
@@ -19,15 +25,12 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 <style lang="scss">
 :root {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  // font-family: "Times New Roman", Times, serif;
-  // font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  // font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
+
   // font-family: Tahoma;
 
   // font-family: monospace;
   // font-family: cursive;
-  
+
   // font-family: Arial, Helvetica, sans-serif;
 
   // font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -56,6 +59,10 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 
 .fitContent {
   width: fit-content;
+}
+
+.noBorders {
+  border: red 12px solid;
 }
 
 .smBlock {

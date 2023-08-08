@@ -13,7 +13,7 @@
               : contact.link + ':' + contact.value
           "
           target="_blank"
-          class="d-flex text-textFirst font-weight-bold"
+          class="d-flex text-textFirst "
         >
           <v-icon class="mr-2 mt-1 w-20">
             <template v-if="contact.icon === 'telegram'">
@@ -21,7 +21,7 @@
             </template>
             <template v-else> mdi-{{ contact.icon }} </template>
           </v-icon>
-          <v-list-item-title class="font-weight-bold hover">
+          <v-list-item-title class=" hover">
             {{ contact.value }}
           </v-list-item-title>
         </a>
@@ -62,4 +62,8 @@ const props = defineProps({
 console.log(props.contacts);
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+a:hover {
+  color: red;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
-  <TemplateBlock title="Work experience">
-    <div class="ma-2 w-auto" v-for="job in data" :key="job.title">
+  <TemplateBlock title="Work experience" class="mb-4">
+    <div class="ma-4 w-auto" v-for="job in data" :key="job.title">
       <div class="d-flex justify-start w-150">
         <TimeArrowLine :dates="job.dates" />
 
@@ -46,7 +46,9 @@
             <v-divider />
 
             <v-col class="text-left">
-              {{ job.text }}
+              <p style="text-indent: 15px" class="textJustify">
+                {{ job.text }}
+              </p>
               <v-divider class="my-2" />
               <!-- TAGS -->
               <v-chip

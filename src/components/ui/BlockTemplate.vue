@@ -1,5 +1,5 @@
 <template>
-  <v-row class="blockAnimate">
+  <div class="blockAnimate">
     <v-col class="fitContent mx-6">
       <h2
         v-if="title"
@@ -11,7 +11,7 @@
         <slot></slot>
       </div>
     </v-col>
-  </v-row>
+  </div>
 </template>
 
 <script setup>

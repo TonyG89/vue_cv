@@ -7,10 +7,7 @@
         target="_blank"
       >
         <div class="textblockBottom d-flex text-textSecond">
-          <v-icon class="mr-1 pb-1" size="x-large"
-            >mdi-book-open-blank-variant</v-icon
-          >
-          <h3 class="mb-2">View My Portfolio</h3>
+          <h3 class="mb-2">Click Here</h3>
         </div>
       </v-btn>
     </div>
@@ -23,7 +20,8 @@ import SideBlockTemplate from "@/components/ui/SideBlockTemplate.vue";
 
 <style lang="scss" scoped>
 .portfolio {
-  height: 200px !important;
+  margin: -8px 0;
+  height: 130px !important;
   background: url("/port.jpg");
   background-position-y: -20px;
   background-size: cover;

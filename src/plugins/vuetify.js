@@ -23,7 +23,7 @@ export default createVuetify({
           secondary: '#DCE775',
 
           first: '#1B5E20',
-          second: '#689F38', //sideblock
+          second: '#546E7A', //sideblock
           third: '#9E9D24', //blue-grey-darken-1
           fourth: '#78909C', //red
 

@@ -2,18 +2,19 @@
   <SideBlockTemplate :title="title">
     <div
       v-for="institution of data"
-      class="text-left block"
-      :class="`${data.at(-1) === institution ? '' : 'mb-6'}`"
+      class="text-left block "
+      :class="`${data.at(-1) === institution ? '' : 'mb-4'}`"
       :key="institution.title"
     >
-      <h6 class="text-first">
+      <h6 class="text-textSecond text-center bg-bgSecond ">
         {{ institution.date }}
       </h6>
-      <h4 class="text-second text-uppercase">{{ institution.text }}</h4>
-      <h6 class="text-textFirst">
-        {{ institution.title.toUpperCase() }}
+      <h6 class="text-textFirst bg-bgThird pa-2">
+        {{ institution.title }}
       </h6>
-
+      <h4 class="text-textThird" v-if="institution.text">
+        {{ institution.text }}
+      </h4>
       <!-- <h6 class="text-textThird">{{ institution.place }}</h6> -->
     </div>
   </SideBlockTemplate>
@@ -38,6 +39,16 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+h4 {
+  line-height: 0.9rem;
+  padding: 8px;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 400;
+  border-bottom: rgb(var(--v-theme-bgThird)) 2px solid;
+  border-left: rgb(var(--v-theme-bgThird)) 2px solid;
+  border-right: rgb(var(--v-theme-bgThird)) 2px solid;
+}
 .hint {
   width: 200px;
 }
@@ -49,5 +60,7 @@ defineProps({
 }
 
 .block {
+  margin: 0 -5px;
+  padding: 0 5px;
 }
 </style>

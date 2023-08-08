@@ -5,7 +5,7 @@
     <EducationSideBlock title="Education" :data="education" />
     <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
-    <PortfolioSideBlock title="Portfolio" />
+    <PortfolioSideBlock title="My Portfolio" />
     <!-- Английский язык -->
     <LanguagesBlock />
   </div>
