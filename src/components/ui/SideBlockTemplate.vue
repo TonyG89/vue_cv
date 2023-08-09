@@ -1,5 +1,5 @@
 <template>
-  <div class="blockAnimate wBlock px-6">
+  <div class="blockAnimate wBlock px-6 my-3">
     <h3
       v-if="title"
       class="text-uppercase text-center headTitle text-textFirst bg-bgFirst"

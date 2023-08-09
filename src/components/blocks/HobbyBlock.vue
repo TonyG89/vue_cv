@@ -1,9 +1,6 @@
 <template>
   <BlockTemplate :title="title">
-    <v-container
-      fluid
-      class="d-flex flex-wrap justify-space-between secondFont mr-2"
-    >
+    <v-container fluid class="d-flex flex-wrap bg-bgThird secondFont mr-2">
       <ChipTemplate textColor="text-bgSecond" :chips="data" />
     </v-container>
   </BlockTemplate>
@@ -12,8 +9,11 @@
 <script setup>
 import BlockTemplate from "../ui/BlockTemplate.vue";
 import ChipTemplate from "../ui/ChipTemplate.vue";
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, watch } from "vue";
 import { addMethodToObject } from "@/helper";
+import { useDisplay } from "vuetify";
+
+const { width, mobile } = useDisplay();
 const flags = reactive({});
 
 // TODO: CREATE HELPER
@@ -26,6 +26,8 @@ const props = defineProps({
     require: true,
   },
 });
+
+// watch(width, console.log(width));
 </script>
 
 <style lang="scss" scoped>

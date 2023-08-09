@@ -1,16 +1,14 @@
 <template>
   <div class="blockAnimate">
-    <v-col class="fitContent mx-6">
+    <div class="mx-6 my-3">
       <h2
         v-if="title"
         class="text-uppercase text-left text-bgFirst px-4 bg-bgSecond headerBorder fitContent"
       >
         {{ title }}
       </h2>
-      <div class="bg-bgThird bodyBlock d-flex flex-wrap">
         <slot></slot>
-      </div>
-    </v-col>
+    </div>
   </div>
 </template>
 
@@ -29,12 +27,7 @@ defineProps({
   margin-bottom: 0px;
 }
 
-.bodyBlock {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
+
 
 // .hoverable {
 //   border: rgb(var(--v-theme-bgFirst)) 0px solid;

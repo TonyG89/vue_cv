@@ -1,16 +1,15 @@
 <template>
-  <div class="mainContainer bg" fluid>
-    <!-- BLOCK 2 -->
+  <div class="mainContainer" fluid>
     <BioBlock :data="aboutMe" />
-    <EducationBlock :data="education" />
-    <!-- BLOCK 3 -->
-    <HobbyBlock title="hobby" :data="hobby" />
+    <div class="lgFlex">
+      <EducationBlock :data="education" />
+      <HobbyBlock title="hobby" :data="hobby" />
+    </div>
     <WorkExperienceBlock :data="experience" />
-    <!--  -->
-    <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" />
+
+    <!-- <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" /> -->
     <!-- <Portfolio title="Portfolio" /> -->
     <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
-    <!--  -->
   </div>
 </template>
 
@@ -22,7 +21,7 @@ import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
 import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
 import Portfolio from "./blocks/PortfolioBlock.vue";
-// import StatisticsBlock from "./blocks/StatisticsBlock.vue";
+import StatisticsBlock from "./blocks/StatisticsBlock.vue";
 import {
   hobby,
   education,
@@ -34,12 +33,8 @@ import {
 
 <style lang="scss">
 .mainContainer {
-  left: 10px;
-  z-index: 1;
-  transform: translateX(-11px);
-}
-
-.bg {
+  // z-index: 1;
+  // transform: translateX(-11px);
   background-color: rgb(var(--v-theme-bgFirst));
 }
 
@@ -55,6 +50,12 @@ import {
 .blockAnimate {
   div {
     animation: fadeIn 1s;
+  }
+}
+
+.lgFlex {
+  @media screen and (max-width: 1228px) {
+    display: flex;
   }
 }
 

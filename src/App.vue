@@ -146,6 +146,13 @@ a {
   max-height: 50px;
 }
 
+.bodyBlock {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
 .animate {
   transition: all 1.2s ease-out;
   > div {

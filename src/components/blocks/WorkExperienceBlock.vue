@@ -1,71 +1,73 @@
 <template>
   <TemplateBlock title="Work experience">
-    <div
-      class="ma-4 w-auto d-flex justify-start"
-      v-for="job in data"
-      :key="job.title"
-    >
-      <TimeArrowLine :dates="job.dates" />
+    <div class="bg-bgThird bodyBlock d-flex flex-wrap">
+      <div
+        class="ma-4 w-auto d-flex justify-start"
+        v-for="job in data"
+        :key="job.title"
+      >
+        <TimeArrowLine :dates="job.dates" />
 
-      <v-card class="my-1 pa-2">
-        <v-row
-          class="height d-flex justify-space-between align-center mx-0"
-          @click="flags[job.place] = !flags[job.place]"
-        >
-          <!-- <v-col class="align-self-end" v-if="job?.logo" cols="3">
+        <v-card class="my-1 pa-2">
+          <v-row
+            class="height d-flex justify-space-between align-center mx-0"
+            @click="flags[job.place] = !flags[job.place]"
+          >
+            <!-- <v-col class="align-self-end" v-if="job?.logo" cols="3">
                 <img class="logo" :src="job.logo" />
               </v-col> -->
-          <v-col cols="6" class="align-self-start text-left">
-            <div class="d-flex">
-              <h3 class="text-textThird">
-                {{ job.title?.toUpperCase() }}
-              </h3>
-            </div>
+            <v-col cols="6" class="align-self-start text-left">
+              <div class="d-flex">
+                <h3 class="text-textThird">
+                  {{ job.title?.toUpperCase() }}
+                </h3>
+              </div>
 
-            <!-- <div class="justify-space-between d-flex flex-column">
+              <!-- <div class="justify-space-between d-flex flex-column">
                       <p>company:</p> -->
-            <div>
-              <h4 class="text-fourth">{{ job.place }}</h4>
-              <h5 v-if="job.type" class="text-textThird text-capitalize">
-                <v-icon
-                  class="mb-1"
-                  :icon="`mdi-${
-                    job.type === 'product' ? 'cart' : 'account-group'
-                  }`"
-                  size="18"
-                />
-                {{ job.type }}
+              <div>
+                <h4 class="text-fourth">{{ job.place }}</h4>
+                <h5 v-if="job.type" class="text-textThird text-capitalize">
+                  <v-icon
+                    class="mb-1"
+                    :icon="`mdi-${
+                      job.type === 'product' ? 'cart' : 'account-group'
+                    }`"
+                    size="18"
+                  />
+                  {{ job.type }}
+                </h5>
+              </div>
+            </v-col>
+            <v-col cols="3" class="text-right mb-auto">
+              <h5 class="text-textThird">
+                {{ job.during }}
               </h5>
-            </div>
-          </v-col>
-          <v-col cols="3" class="text-right mb-auto">
-            <h5 class="text-textThird">
-              {{ job.during }}
-            </h5>
-            <h6 class="mt-2 text-textThird justify-self-end">
-              {{ job.location }}
-            </h6></v-col
-          >
-          <v-divider />
+              <h6 class="mt-2 text-textThird justify-self-end">
+                {{ job.location }}
+              </h6></v-col
+            >
+            <v-divider />
 
-          <v-col class="text-left">
-            <p style="text-indent: 15px" class="textJustify">
-              {{ job.text }}
-            </p>
-            <v-divider class="my-2" />
-            <!-- TAGS -->
-            <v-chip
-              v-for="(skill, ind) of job.skills?.split(', ')"
-              :key="ind"
-              color="textThird"
-              label
-              size="small"
-              class="ma-1"
-              >{{ skill }}</v-chip
-            ></v-col
-          >
-        </v-row>
-      </v-card>
+            <v-col class="text-left">
+              <p style="text-indent: 15px" class="textJustify">
+                {{ job.text }}
+              </p>
+              <v-divider class="my-2" />
+              <!-- TAGS -->
+              <v-chip
+                v-for="(skill, ind) of job.skills?.split(', ')"
+                :key="ind"
+                color="textThird"
+                label
+                size="small"
+                class="ma-1"
+                >{{ skill }}</v-chip
+              ></v-col
+            >
+          </v-row>
+        </v-card>
+      </div>
     </div>
   </TemplateBlock>
   <components is="Block" />

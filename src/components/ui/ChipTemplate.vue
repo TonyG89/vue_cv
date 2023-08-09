@@ -29,6 +29,8 @@
 </template>
 
 <script setup>
+
+
 defineProps({
   chips: {
     type: Array,
