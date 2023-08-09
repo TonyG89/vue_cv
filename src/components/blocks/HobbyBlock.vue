@@ -1,6 +1,10 @@
 <template>
   <BlockTemplate :title="title">
-    <v-container fluid class="d-flex flex-wrap bg-bgThird secondFont mr-2">
+    <v-container
+      fluid
+      class="d-flex bg-bgThird flex-wrap secondFont mr-2"
+      :class="width < 1250 ? 'mobWidth ' : ''"
+    >
       <ChipTemplate textColor="text-bgSecond" :chips="data" />
     </v-container>
   </BlockTemplate>
@@ -32,7 +36,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .v-container {
-  max-width: 1000px;
+  width: 100%;
 }
 .weightBlock {
   width: 180px;

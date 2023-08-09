@@ -1,8 +1,6 @@
 <template>
   <TemplateBlock :title="title">
-    <div
-      class="bg-bgThird bodyBlock cont justify-space-between d-flex flex-wrap"
-    >
+    <div class="bg-bgThird bodyBlock cont d-flex flex-wrap">
       <v-card
         class="ma-4 d-flex justify-space-between"
         v-for="institution of data"
@@ -52,10 +50,9 @@ defineProps({
 }
 .cont {
   width: 100%;
-  // @media screen and (max-width: 1228px) {
-  //   background: red;
-  //   width: 50%;
-  // }
+  @media screen and (max-width: 1250px) {
+    width: 402px;
+  }
 }
 .widthBlock {
   width: 370px;

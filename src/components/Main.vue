@@ -47,6 +47,10 @@ import {
   // max-width: 1000px;
 }
 
+.mobWidth {
+  width: 325px;
+}
+
 .blockAnimate {
   div {
     animation: fadeIn 1s;
@@ -54,8 +58,9 @@ import {
 }
 
 .lgFlex {
-  @media screen and (max-width: 1228px) {
+  @media screen and (max-width: 1250px) {
     display: flex;
+    justify-content: space-between;
   }
 }
 

@@ -25,15 +25,19 @@
 
 <script setup>
 import { onMounted } from "vue";
-import { useDisplay } from "vuetify";
 import Main from "@/components/Main.vue";
 import SideBlock from "@/components/SideBlock.vue";
 import VisitCounter from "@/services/VisitCounter.vue";
 import HeroBlock from "@/components/blocks/HeroBlock.vue";
+import { useDisplay } from "vuetify";
 
 const { width, mobile } = useDisplay();
 console.log(width.value); // 960
 console.log(mobile.value); // true
+
+onMounted(() => {
+  console.log(this.$vuetify.display.mobile);
+});
 </script>
 
 <style lang="scss">

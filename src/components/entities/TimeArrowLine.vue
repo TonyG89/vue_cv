@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="!hidden"
     class="text-textThird d-flex flex-column justify-center mr-6 ml-2 mt-2 block"
   >
     <h6 class="">
@@ -17,6 +18,10 @@ defineProps({
   dates: {
     type: Array, // [start,end]
     require: true,
+  },
+  hidden: {
+    type: Boolean,
+    default: () => false,
   },
 });
 </script>

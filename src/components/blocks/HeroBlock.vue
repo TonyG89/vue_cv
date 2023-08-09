@@ -18,13 +18,7 @@
 
 <script setup>
 import { aboutMe } from "@/data/";
-defineProps({
-  photoUrl: { type: String, default: "/me.jpg" },
-  data: {
-    type: Object,
-    require: true,
-  },
-});
+
 </script>
 
 <style lang="scss" scoped>

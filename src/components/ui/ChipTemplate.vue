@@ -1,6 +1,7 @@
 <template>
   <v-chip
-    class="animate mx-2 my-2 d-flex flex-row flex-wrap justify-start"
+    class="animate mx-2 my-2"
+    :class="width < 1100 ? 'w-100' : ''"
     v-for="item in chips"
     :key="item.title"
     @click="flags[item.title] = !flags[item.title]"
@@ -29,7 +30,9 @@
 </template>
 
 <script setup>
+import { useDisplay } from "vuetify/lib/framework.mjs";
 
+const { width } = useDisplay();
 
 defineProps({
   chips: {

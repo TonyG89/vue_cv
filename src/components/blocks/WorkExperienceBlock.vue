@@ -6,7 +6,7 @@
         v-for="job in data"
         :key="job.title"
       >
-        <TimeArrowLine :dates="job.dates" />
+        <TimeArrowLine :hidden="width < 950" :dates="job.dates" />
 
         <v-card class="my-1 pa-2">
           <v-row
@@ -76,9 +76,16 @@
 <script setup>
 import TemplateBlock from "@/components/ui/BlockTemplate.vue";
 import TimeArrowLine from "@/components/entities/TimeArrowLine.vue";
-import { reactive } from "vue";
+import { reactive, onMounted } from "vue";
 import { defineComponent } from "vue";
 import { experience } from "@/data";
+import { useDisplay } from "vuetify";
+
+const { width, mobile } = useDisplay();
+
+onMounted(() => {
+  width.value < 950 && console.log(width.value);
+});
 
 const flags = reactive({});
 

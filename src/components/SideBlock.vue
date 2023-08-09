@@ -1,5 +1,5 @@
 <template>
-  <div class="sideBlock" >
+  <div class="sideBlock">
     <!-- БЛОК: Фотография и контакты -->
     <ContactsBlock :contacts="contacts" />
     <!-- <EducationSideBlock title="Education" :data="education" /> -->
@@ -24,13 +24,6 @@ import { contacts, skills, education, theoryAndPractice } from "@/data/";
 
 const { softSkills, techSkillsClass } = skills();
 console.log(window.innerWidth);
-const adaptationState = computed(() => {
-  const screenWidth = window.innerWidth;
-  console.log(window.innerWidth);
-  if (screenWidth < 768) {
-    return "bg-red";
-  }
-});
 </script>
 
 <style lang="scss">
