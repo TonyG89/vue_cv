@@ -51,7 +51,7 @@ defineProps({
 .cont {
   width: 100%;
   @media screen and (max-width: 1250px) {
-    width: 402px;
+    max-width: 402px;
   }
 }
 .widthBlock {

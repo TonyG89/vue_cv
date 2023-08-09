@@ -22,6 +22,8 @@ import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
 import Portfolio from "./blocks/PortfolioBlock.vue";
 import StatisticsBlock from "./blocks/StatisticsBlock.vue";
+
+
 defineProps({
   hobby: Array,
   education: Object,

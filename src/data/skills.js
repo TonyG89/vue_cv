@@ -56,58 +56,6 @@ export default function () {
     ],
   ]
 
-  // const softSkills = [
-  //   {
-  //     title: 'HTML',
-  //     started: '2014',
-  //     hint: '',
-  //     rate: '1',
-  //   },
-  //   {
-  //     title: 'CSS',
-  //     hint: ['SASS', 'Bootstrap 5', 'TailwindCSS'],
-  //     rate: '1',
-  //   },
-  //   {
-  //     title: 'JS',
-  //     hint: ['ES6', 'read book Kyle Simpson and other'],
-  //     rate: '1',
-  //   },
-  //   {
-  //     title: 'GIT'
-  //   },
-  //   {
-  //     title: 'Gulp'
-  //   },
-  //   {
-  //     title: 'Webpack'
-  //   },
-  //   {
-  //     title: 'Google Sheets'
-  //   },
-  //   {
-  //     title: 'SQL'
-  //   },
-  //   {
-  //     title: 'NODE JS'
-  //   },
-  //   {
-  //     title: 'Vue3'
-  //   },
-  //   {
-  //     title: 'React'
-  //   },
-  //   {
-  //     title: 'Figma'
-  //   },
-  //   {
-  //     title: 'Ag-Grid'
-  //   },
-  //   {
-  //     title: 'Php',
-  //     hint: 'joomla, wordpress'
-  //   },
-  // ]
 
   class SoftSkill {
     constructor(title, type = null, desc = '',) {

@@ -1,13 +1,35 @@
 <template>
   <v-app class="wrapper app" fluid>
     <HeroBlock />
-    <div :class="width > 770 ? 'd-flex' : ''">
+    <div class="d-flex" v-if="width > 770">
       <SideBlock
+        :hobby="hobby"
+        :education="education"
+        :experience="experience"
+        :aboutMe="aboutMe"
+        :theoryAndPractice="theoryAndPractice"
+        :contacts="contacts"
+        :skills="skills"
         class="afterHeader"
-        :class="width > 770 ? 'bg-bgSecond' : ''"
       />
-      <Main class="afterHeader w-100" />
+      <Main
+        :hobby="hobby"
+        :education="education"
+        :experience="experience"
+        :aboutMe="aboutMe"
+        :theoryAndPractice="theoryAndPractice"
+        class="afterHeader"
+      />
     </div>
+    <MobileOneLine
+      v-else
+      :hobby="hobby"
+      :education="education"
+      :experience="experience"
+      :aboutMe="aboutMe"
+      :theoryAndPractice="theoryAndPractice"
+      class="afterHeader"
+    />
     <v-footer color="bgThird" border
       ><div class="mx-auto">
         <!-- <a href="https://www.buymeacoffee.com/glzk"
@@ -29,15 +51,27 @@ import Main from "@/components/Main.vue";
 import SideBlock from "@/components/SideBlock.vue";
 import VisitCounter from "@/services/VisitCounter.vue";
 import HeroBlock from "@/components/blocks/HeroBlock.vue";
+import MobileOneLine from "@/components/MobileOneLine.vue";
 import { useDisplay } from "vuetify";
+import {
+  hobby,
+  education,
+  experience,
+  aboutMe,
+  theoryAndPractice,
+  contacts,
+  skills,
+} from "@/data";
 
+// const { techSkillsClass, softSkills } = skills();
 const { width, mobile } = useDisplay();
+
 console.log(width.value); // 960
 console.log(mobile.value); // true
 
-onMounted(() => {
-  console.log(this.$vuetify.display.mobile);
-});
+// onMounted(() => {
+//   console.log(this.$vuetify.display.mobile);
+// });
 </script>
 
 <style lang="scss">
@@ -58,7 +92,7 @@ onMounted(() => {
 .afterHeader {
   padding-top: 350px;
   @media screen and (max-width: 768px) {
-    padding-top: 250px;
+    // padding-top: 250px;
   }
 }
 
