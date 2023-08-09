@@ -1,5 +1,5 @@
 <template>
-  <div class="sideBlock">
+  <div class="sideBlock" >
     <!-- БЛОК: Фотография и контакты -->
     <ContactsBlock :contacts="contacts" />
     <!-- <EducationSideBlock title="Education" :data="education" /> -->
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import ContactsBlock from "@/components/blocks/ContactsBlock.vue";
 import TechSkillsBlock from "@/components/blocks/TechSkillsBlock.vue";
 import SoftSkillsBlock from "@/components/blocks/SoftSkillsBlock.vue";
@@ -23,6 +23,14 @@ import CodeStatisticsSideBlock from "./blocks/StatisticsSideBlock.vue";
 import { contacts, skills, education, theoryAndPractice } from "@/data/";
 
 const { softSkills, techSkillsClass } = skills();
+console.log(window.innerWidth);
+const adaptationState = computed(() => {
+  const screenWidth = window.innerWidth;
+  console.log(window.innerWidth);
+  if (screenWidth < 768) {
+    return "bg-red";
+  }
+});
 </script>
 
 <style lang="scss">
@@ -39,6 +47,10 @@ const { softSkills, techSkillsClass } = skills();
   background-color: rgb(var(--v-theme-bgFirst));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: slideInLeft 1s;
+}
+
+.bg-none {
+  background: #00000000;
 }
 
 .side-menu-card:hover {

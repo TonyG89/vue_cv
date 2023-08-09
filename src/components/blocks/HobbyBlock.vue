@@ -1,6 +1,9 @@
 <template>
   <BlockTemplate :title="title">
-    <v-container class="d-flex flex-wrap justify-start secondFont">
+    <v-container
+      fluid
+      class="d-flex flex-wrap justify-space-between secondFont mr-2"
+    >
       <ChipTemplate textColor="text-bgSecond" :chips="data" />
     </v-container>
   </BlockTemplate>
@@ -26,6 +29,9 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+.v-container {
+  max-width: 1000px;
+}
 .weightBlock {
   width: 180px;
   border: black 2px solid;

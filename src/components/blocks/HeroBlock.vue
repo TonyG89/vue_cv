@@ -48,6 +48,7 @@ h2 {
   border-radius: 0;
   text-align: center;
   box-shadow: none;
+  z-index: 2;
 }
 
 .avatar {
@@ -69,5 +70,15 @@ h2 {
 }
 .blockAnimate {
   animation: fadeInLeft 1s;
+}
+
+@media screen and (max-width: 1050px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 0px;
+  }
 }
 </style>

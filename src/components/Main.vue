@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="mainContainer bg" fluid>
     <!-- BLOCK 2 -->
     <BioBlock :data="aboutMe" />
     <EducationBlock :data="education" />
     <!-- BLOCK 3 -->
     <HobbyBlock title="hobby" :data="hobby" />
-    <WorkExperienceBlock :data="experience" />:class='[this.$vuetify.breakpoint.xs ? "justify-center" : "justify-space-around"]'
+    <WorkExperienceBlock :data="experience" />
     <!--  -->
     <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" />
     <!-- <Portfolio title="Portfolio" /> -->
@@ -33,13 +33,14 @@ import {
 </script>
 
 <style lang="scss">
-.container {
-  width: auto;
-  background-image: url("/bg.svg");
-  background: rgb(var(--v-theme-bgFirst));
-  background-size: cover;
-  background-position: center;
-  margin-top: -12px;
+.mainContainer {
+  left: 10px;
+  z-index: 1;
+  transform: translateX(-11px);
+}
+
+.bg {
+  background-color: rgb(var(--v-theme-bgFirst));
 }
 
 .header-card {
@@ -47,7 +48,6 @@ import {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
 .v-main {
   // max-width: 1000px;
 }

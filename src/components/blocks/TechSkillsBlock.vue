@@ -1,15 +1,19 @@
 <template>
   <SideBlockTemplate :title="title">
-    <div v-for="(group, ind) in skills" :key="ind">
+    <div
+      v-for="(group, ind) in skills"
+      :key="ind"
+      :class="ind !== skills.length - 1 ? 'bottomMargin' : ''"
+    >
       <v-chip
         :color="chipColor(ind + 1)"
         v-for="skill in group"
         :key="skill.title"
         class="mr-1 my-1 px-3"
       >
-        <div class="mt-1 mr-2">
-          <v-icon :icon="skill.icon" class="mr-1" />{{ skill.title }}
-          <!-- <v-tooltip activator="parent" location="right">
+        <v-icon :icon="skill.icon" class="mr-1" />
+        <span @click="hideTitle">{{ skill.title }} </span>
+        <!-- <v-tooltip activator="parent" location="right">
                   <div v-if="skill.started" class="text-red">
                     since:{{ skill.started }}(<span class="font-italic"
                     >{{ practiceTime(skill.started) }} </span
@@ -18,7 +22,6 @@
                   <div v-if="skill.hint">{{ skill.hint }}</div>
                   <div class="curve" v-if="skill.stack">{{ skill.stack }}xxx</div>
                 </v-tooltip> -->
-        </div>
       </v-chip>
       <v-tooltip activator="parent" location="right">
         <div
@@ -35,6 +38,10 @@
 
 <script setup>
 import SideBlockTemplate from "../ui/SideBlockTemplate.vue";
+import { ref } from "vue";
+
+const hideHint = ref(false);
+
 const props = defineProps({
   title: {
     type: String,
@@ -45,6 +52,8 @@ const props = defineProps({
     default: () => [], //[[{title, hint, rate, started, icon}]]
   },
 });
+
+const hideTitle = (e) => console.log(e.target);
 
 const levelHint = [
   ["Strong Proficiency", "Constantly improving and enhancing (expert level)"],
@@ -105,5 +114,10 @@ const chipColor = (levelNumber) => {
   padding: 5px;
   border-radius: 5px;
   background: #eceff1;
+}
+
+.bottomMargin {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 </style>

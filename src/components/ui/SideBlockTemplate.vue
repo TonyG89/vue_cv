@@ -23,7 +23,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .wBlock {
-  width: 360px;
+  width: 375px;
 }
 
 .headTitle {

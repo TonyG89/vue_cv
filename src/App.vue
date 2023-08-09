@@ -1,9 +1,12 @@
 <template>
-  <v-app class="wrapper">
+  <v-app class="wrapper app" fluid>
     <HeroBlock />
-    <div class="d-flex">
-      <SideBlock class="afterHeader w400" />
-      <Main class="afterHeader" />
+    <div :class="width > 770 ? 'd-flex' : ''">
+      <SideBlock
+        class="afterHeader"
+        :class="width > 770 ? 'bg-bgSecond' : ''"
+      />
+      <Main class="afterHeader w-100" />
     </div>
     <v-footer color="bgThird" border
       ><div class="mx-auto">
@@ -21,10 +24,16 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
+import { useDisplay } from "vuetify";
 import Main from "@/components/Main.vue";
 import SideBlock from "@/components/SideBlock.vue";
 import VisitCounter from "@/services/VisitCounter.vue";
 import HeroBlock from "@/components/blocks/HeroBlock.vue";
+
+const { width, mobile } = useDisplay();
+console.log(width.value); // 960
+console.log(mobile.value); // true
 </script>
 
 <style lang="scss">
@@ -44,6 +53,9 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 
 .afterHeader {
   padding-top: 350px;
+  @media screen and (max-width: 768px) {
+    padding-top: 250px;
+  }
 }
 
 .bgOpacity {
@@ -52,10 +64,6 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 
 .fitContent {
   width: fit-content;
-}
-
-.noBorders {
-  border-top: rgb(162, 7, 7) 12px solid;
 }
 
 .smBlock {
@@ -93,7 +101,6 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
 
 .wrapper {
   display: flex;
-  // height: 100%;
   max-width: 1240px;
   margin: 0 auto;
 }
@@ -131,6 +138,14 @@ a {
   }
 }
 
+.app {
+  background: rgb(108, 131, 143);
+}
+
+.v-footer {
+  max-height: 50px;
+}
+
 .animate {
   transition: all 1.2s ease-out;
   > div {
@@ -155,10 +170,6 @@ a {
       transition: all 0.3s ease-in-out;
     }
   }
-}
-
-.w400 {
-  width: 600px;
 }
 
 @keyframes bounce {

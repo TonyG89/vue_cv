@@ -1,29 +1,31 @@
 <template>
   <TemplateBlock :title="title">
-    <v-card
-      class="ma-4 d-flex justify-space-between align-center"
-      max-width="370"
-      width="370"
-      min-width="180"
-      v-for="institution of data"
-      :key="institution.title"
-      dark
-    >
-      <v-card-text class="d-flex flex-column justify-space-between">
-        <div>
-          <h3 class="text-textThird mb-1" style="white-space: pre-wrap">
-            {{ institution.title.toUpperCase() }}
-          </h3>
-          <h4 v-if="institution.text" class="text-textFirst">
-            {{ institution.text }}
-          </h4>
-        </div>
-        <div>
-          <h4 class="bgLine">{{ institution.date }}</h4>
-          <h5 class="text-textThird">{{ institution.place }}</h5>
-        </div>
-      </v-card-text>
-    </v-card>
+    <div class="d-flex justify-space-between">
+      <v-card
+        class="ma-4 d-flex justify-space-between"
+        max-width="370"
+        width="370"
+        min-width="180"
+        v-for="institution of data"
+        :key="institution.title"
+        dark
+      >
+        <v-card-text class="d-flex flex-column justify-space-between">
+          <div>
+            <h3 class="text-textThird mb-1" style="white-space: pre-wrap">
+              {{ institution.title.toUpperCase() }}
+            </h3>
+            <h4 v-if="institution.text" class="text-textFirst">
+              {{ institution.text }}
+            </h4>
+          </div>
+          <div>
+            <h4 class="bgLine">{{ institution.date }}</h4>
+            <h5 class="text-textThird">{{ institution.place }}</h5>
+          </div>
+        </v-card-text>
+      </v-card>
+    </div>
   </TemplateBlock>
 </template>
 

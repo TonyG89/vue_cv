@@ -7,7 +7,7 @@
       >
         {{ title }}
       </h2>
-      <div class="bg-bgThird bodyBlock d-flex flex-wrap" width="100%" dark>
+      <div class="bg-bgThird bodyBlock d-flex flex-wrap">
         <slot></slot>
       </div>
     </v-col>

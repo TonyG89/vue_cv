@@ -1,6 +1,6 @@
 <template>
   <v-chip
-    class="animate mx-3 my-2 d-flex flex-row flex-wrap justify-start"
+    class="animate mx-2 my-2 d-flex flex-row flex-wrap justify-start"
     v-for="item in chips"
     :key="item.title"
     @click="flags[item.title] = !flags[item.title]"

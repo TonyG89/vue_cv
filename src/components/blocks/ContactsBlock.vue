@@ -32,12 +32,12 @@
         <v-list-item
           v-for="contact in contacts.filter((contact) => !contact.value)"
           :key="contact.title"
-          class="px-0 opa"
+          class="px-0"
         >
-          <v-chip style="width: 100px" class="hover">
+          <v-chip label style="width: 120px" class="hover py-4">
             <a
               :href="contact.link"
-              class="text-textFirst d-flex"
+              class="text-textFirst d-flex pl-3"
               target="_blank"
             >
               <v-icon class="mr-1" size="20"> mdi-{{ contact.icon }}</v-icon>
@@ -67,6 +67,10 @@ console.log(props.contacts);
 a {
   :hover {
   }
+}
+.minusMargin {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .v-list-item {
 }
