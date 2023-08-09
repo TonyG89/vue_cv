@@ -23,7 +23,7 @@ export default createVuetify({
           secondary: '#DCE775',
 
           first: '#1B5E20',
-          second: '#546E7A', //sideblock
+          second: '#689F38',
           third: '#9E9D24', //blue-grey-darken-1
           fourth: '#78909C', //red
 
@@ -32,8 +32,8 @@ export default createVuetify({
           test: '#E65100',
           textFirst: '#263238', // hero
           textSecond: '#FFFDE7', // hero
-          textThird: '#546E7A',
-          bgFirst: '#ECEFF1', //
+          textThird: '#455A64', // 
+          bgFirst: '#ECEFF1', // sideblock
           bgSecond: '#546E7A', // hero
           bgThird: '#CFD8DC', // hero
         },

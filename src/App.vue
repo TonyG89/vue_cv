@@ -2,16 +2,19 @@
   <v-app class="wrapper">
     <HeroBlock />
     <div class="d-flex">
-      <SideBlock class="afterHeader" />
+      <SideBlock class="afterHeader w400" />
       <Main class="afterHeader" />
     </div>
     <v-footer color="bgThird" border
       ><div class="mx-auto">
-        <a href="https://www.buymeacoffee.com/glzk"
-          ><h3 class="text-textFirst">
-            <v-icon>mdi-coffee</v-icon> created by Tony
-          </h3></a
-        >
+        <!-- <a href="https://www.buymeacoffee.com/glzk"
+        target="_blank"
+          > -->
+        <h3 class="text-textFirst">
+          <!-- <v-icon>mdi-coffee</v-icon> -->
+          created by Tony
+        </h3>
+        <!-- </a> -->
       </div>
     </v-footer>
   </v-app>
@@ -39,20 +42,8 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
   // font-size: 16px;
 }
 
-.sideBlock {
-  max-width: 25%;
-}
-
 .afterHeader {
   padding-top: 350px;
-}
-
-.bgImg {
-  background-image: url("/bg.svg");
-  background: rgb(var(--v-theme-bgFirst));
-  background-size: cover;
-  background-position: center;
-  min-height: 300px; /* Установите высоту контейнера */
 }
 
 .bgOpacity {
@@ -122,9 +113,22 @@ import HeroBlock from "@/components/blocks/HeroBlock.vue";
   }
 }
 
+.secondFont {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 900;
+}
+
 a {
   text-decoration: none;
   color: rgb(var(--v-theme-test));
+}
+
+.boldAnimate {
+  transition: all 0.3s ease-out;
+  :hover {
+    font-weight: 700;
+    transition: all 0.1s ease-out;
+  }
 }
 
 .animate {
@@ -136,8 +140,11 @@ a {
     }
   }
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
     transition: transform 0.5s linear;
+    color: rgba(var(--v-theme-textThird), 1);
+    // color: black;
+    font-weight: 900 !important;
     > div {
       //:not(:last-child)
       // filter: invert(100%);
@@ -148,6 +155,10 @@ a {
       transition: all 0.3s ease-in-out;
     }
   }
+}
+
+.w400 {
+  width: 600px;
 }
 
 @keyframes bounce {
@@ -195,6 +206,5 @@ a {
   to {
     opacity: 1;
   }
-  
 }
 </style>

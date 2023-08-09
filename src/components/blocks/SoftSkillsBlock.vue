@@ -6,7 +6,7 @@
     <v-chip
       v-for="skill in skills"
       :key="skill.title"
-      class="mr-1 my-1 animate"
+      class="mr-1 my-1 boldAnimate"
     >
       {{ skill.title.toUpperCase() }}
     </v-chip>

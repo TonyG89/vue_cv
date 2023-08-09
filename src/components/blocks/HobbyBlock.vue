@@ -1,6 +1,6 @@
 <template>
   <BlockTemplate :title="title">
-    <v-container class="d-flex flex-wrap justify-start">
+    <v-container class="d-flex flex-wrap justify-start secondFont">
       <ChipTemplate textColor="text-bgSecond" :chips="data" />
     </v-container>
   </BlockTemplate>

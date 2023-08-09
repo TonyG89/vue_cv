@@ -1,33 +1,28 @@
 <template>
   <TemplateBlock :title="title">
-    <v-card class="bg-background py-2 smBlock" width="400px">
-      <v-card
-        class="header-card bg-grey border d-flex py-6 mb-2 mx-auto"
-        min-width="300px"
-        max-width="380px"
-        min-height="180px"
-        v-for="institution of data"
-        :key="institution.title"
-        dark
-      >
-        <v-row class="d-flex justify-center align-center mx-0">
-          <v-col cols="12" lg="4">
-            <img
-              v-if="institution?.img"
-              class="logo ml-4"
-              :src="institution.img"
-            />
-          </v-col>
-          <v-col cols="12" lg="8">
-            <h3>{{ institution.title.toUpperCase() }}</h3>
-            <v-card-text class="text-textSecond">
-              {{ institution.text }}</v-card-text
-            >
-            <v-card-subtitle> {{ institution.date }}</v-card-subtitle>
-            <h6 class="text-textThird">{{ institution.place }}</h6>
-          </v-col>
-        </v-row>
-      </v-card>
+    <v-card
+      class="ma-4 d-flex justify-space-between align-center"
+      max-width="370"
+      width="370"
+      min-width="180"
+      v-for="institution of data"
+      :key="institution.title"
+      dark
+    >
+      <v-card-text class="d-flex flex-column justify-space-between">
+        <div>
+          <h3 class="text-textThird mb-1" style="white-space: pre-wrap">
+            {{ institution.title.toUpperCase() }}
+          </h3>
+          <h4 v-if="institution.text" class="text-textFirst">
+            {{ institution.text }}
+          </h4>
+        </div>
+        <div>
+          <h4 class="bgLine">{{ institution.date }}</h4>
+          <h5 class="text-textThird">{{ institution.place }}</h5>
+        </div>
+      </v-card-text>
     </v-card>
   </TemplateBlock>
 </template>
@@ -51,5 +46,11 @@ defineProps({
 .logo {
   min-width: 100px;
   max-width: 100%;
+}
+
+.bgLine {
+  background: rgba(var(--v-theme-bgThird), 0.6);
+  margin: 8px -16px 3px;
+  padding-left: 16px;
 }
 </style>

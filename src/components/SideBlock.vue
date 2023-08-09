@@ -1,13 +1,13 @@
 <template>
-  <div class="sideBlock" app permanent>
+  <div class="sideBlock">
     <!-- БЛОК: Фотография и контакты -->
     <ContactsBlock :contacts="contacts" />
-    <EducationSideBlock title="Education" :data="education" />
+    <!-- <EducationSideBlock title="Education" :data="education" /> -->
     <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
-    <PortfolioSideBlock title="My Portfolio" />
-    <!-- Английский язык -->
+    <CodeStatisticsSideBlock title="My Activity" :data="theoryAndPractice" />
     <LanguagesBlock />
+    <PortfolioSideBlock title="My Portfolio" />
   </div>
 </template>
 
@@ -19,15 +19,17 @@ import SoftSkillsBlock from "@/components/blocks/SoftSkillsBlock.vue";
 import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
 import EducationSideBlock from "./blocks/EducationSideBlock.vue";
 import PortfolioSideBlock from "./blocks/PortfolioSideBlock.vue";
-import { contacts, skills, education } from "@/data/";
+import CodeStatisticsSideBlock from "./blocks/StatisticsSideBlock.vue";
+import { contacts, skills, education, theoryAndPractice } from "@/data/";
 
 const { softSkills, techSkillsClass } = skills();
 </script>
 
 <style lang="scss">
-/* Стили как ранее */
-
-/* Анимации как ранее */
+.sideBlock {
+  max-width: 400px;
+  width: 400px;
+}
 
 .side-menu-card {
   margin: 4px 16px;

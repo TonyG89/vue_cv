@@ -5,7 +5,7 @@
         :color="chipColor(ind + 1)"
         v-for="skill in group"
         :key="skill.title"
-        class="mr-1 my-1 px-3 animate"
+        class="mr-1 my-1 px-3"
       >
         <div class="mt-1 mr-2">
           <v-icon :icon="skill.icon" class="mr-1" />{{ skill.title }}

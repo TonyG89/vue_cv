@@ -7,7 +7,7 @@ const education = [{
   img: "uuniversity.png",
 },
 {
-  title: "Kyiv Business Lyceum 'LECOS'",
+  title: "Kyiv Business Lyceum\n«LECOS»",
   date: "2003 - 2007",
   place: "Ukraine | Kyiv",
   img: "klb.png",
