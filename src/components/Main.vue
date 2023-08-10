@@ -35,6 +35,7 @@ defineProps({
 .mainContainer {
   // z-index: 1;
   // transform: translateX(-11px);
+  width: 100%;
   background-color: rgb(var(--v-theme-bgFirst));
 }
 

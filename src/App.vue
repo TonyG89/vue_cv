@@ -1,7 +1,7 @@
 <template>
   <v-app class="wrapper app" fluid>
     <HeroBlock />
-    <div class="d-flex" v-if="width > 770">
+    <div class="d-flex w-100" v-if="width > 770">
       <SideBlock
         :hobby="hobby"
         :education="education"

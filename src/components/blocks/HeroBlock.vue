@@ -76,7 +76,7 @@ h2 {
   animation: fadeInLeft 1s;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1058px) {
   h2 {
     font-size: 2.5rem;
   }
