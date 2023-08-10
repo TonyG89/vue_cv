@@ -1,5 +1,5 @@
 <template>
-  <div class="sideBlock ">
+  <div class="sideBlock">
     <ContactsBlock :contacts="contacts" />
     <!-- <EducationSideBlock title="Education" :data="education" /> -->
     <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
@@ -19,6 +19,7 @@ import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
 import EducationSideBlock from "./blocks/EducationSideBlock.vue";
 import PortfolioSideBlock from "./blocks/PortfolioSideBlock.vue";
 import CodeStatisticsSideBlock from "./blocks/StatisticsSideBlock.vue";
+
 const props = defineProps({
   contacts: Array,
   skills: Function,
@@ -31,7 +32,6 @@ console.log(window.innerWidth);
 </script>
 
 <style lang="scss">
-
 .sideBlock {
   max-width: 400px;
   width: 400px;

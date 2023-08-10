@@ -28,6 +28,8 @@
       :experience="experience"
       :aboutMe="aboutMe"
       :theoryAndPractice="theoryAndPractice"
+      :contacts="contacts"
+      :skills="skills"
       class="afterHeader"
     />
     <v-footer color="bgThird" border
@@ -92,7 +94,7 @@ console.log(mobile.value); // true
 .afterHeader {
   padding-top: 350px;
   @media screen and (max-width: 768px) {
-    // padding-top: 250px;
+    padding-top: 240px;
   }
 }
 

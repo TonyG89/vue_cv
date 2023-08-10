@@ -4,7 +4,9 @@
       <v-col class="sideBlock">
         <div
           class="avatar imgAnimate mx-auto"
-          :style="`border-color: ${bgFirst}`"
+          :style="`border-color: rgb(var(--v-theme-${
+            width < 770 ? 'bgFirst' : 'bgSecond'
+          })`"
         />
       </v-col>
       <v-col class="text-left ml-3 mt-5 d-flex flex-column-reverse justify-end">
@@ -18,7 +20,8 @@
 
 <script setup>
 import { aboutMe } from "@/data/";
-
+import { useDisplay } from "vuetify/lib/framework.mjs";
+const { width } = useDisplay();
 </script>
 
 <style lang="scss" scoped>
@@ -29,9 +32,11 @@ h1 {
 }
 h2 {
   font-size: 3.9rem;
-
   margin-bottom: 0;
   padding-bottom: 0;
+  @media screen and (max-width: 770) {
+    line-height: 3rem;
+  }
 }
 .heroCard {
   margin-top: 100px;
@@ -43,12 +48,17 @@ h2 {
   text-align: center;
   box-shadow: none;
   z-index: 2;
+  @media screen and (max-width: 770px) {
+    margin-top: 16px;
+  }
 }
 
 .avatar {
   box-sizing: content-box;
   background: url("/me.jpg");
-  background-size: contain;
+  background-size: cover;
+  background-position-x: center;
+
   border-radius: 50%;
   height: 170px;
   max-width: 170px;

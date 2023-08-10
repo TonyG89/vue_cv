@@ -1,5 +1,12 @@
 <template>
   <div class="mainContainer" fluid>
+    <ContactsBlock :contacts="contacts" />
+    <!-- <EducationSideBlock title="Education" :data="education" /> -->
+    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
+    <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
+    <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" />
+    <Portfolio title="Portfolio" />
+
     <BioBlock :data="aboutMe" />
     <div class="lgFlex">
       <EducationBlock :data="education" />
@@ -7,8 +14,6 @@
     </div>
     <WorkExperienceBlock :data="experience" />
 
-    <!-- <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" /> -->
-    <!-- <Portfolio title="Portfolio" /> -->
     <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
   </div>
 </template>
@@ -22,13 +27,20 @@ import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
 import Portfolio from "./blocks/PortfolioBlock.vue";
 import StatisticsBlock from "./blocks/StatisticsBlock.vue";
+import ContactsBlock from "./blocks/ContactsBlock.vue";
+import SoftSkillsBlock from "./blocks/SoftSkillsBlock.vue";
+import TechSkillsBlock from "./blocks/TechSkillsBlock.vue";
 
+const { softSkills, techSkillsClass } = props.skills();
 
-defineProps({
+const props = defineProps({
   hobby: Array,
   education: Object,
   experience: Array,
   aboutMe: Object,
+  theoryAndPractice: Object,
+  contacts: Array,
+  skills: Function,
   theoryAndPractice: Object,
 });
 </script>
@@ -38,6 +50,8 @@ defineProps({
   // z-index: 1;
   // transform: translateX(-11px);
   background-color: rgb(var(--v-theme-bgFirst));
+  width: 100%;
+  max-width: 768px;
 }
 
 .header-card {
