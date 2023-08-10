@@ -1,6 +1,6 @@
 <template>
   <v-card class="heroCard text-textFirst bg-bgThird position-absolute">
-    <v-row>
+    <div :class="width > 550 && 'd-flex flex-wrap'">
       <v-col class="sideBlock">
         <div
           class="avatar imgAnimate mx-auto"
@@ -14,7 +14,7 @@
         <h1 class="text-textThird textAnimate">{{ aboutMe.vacancy }}</h1>
         <h2 class="text-uppercase textAnimate">{{ aboutMe.name }}</h2>
       </v-col>
-    </v-row>
+    </div>
   </v-card>
 </template>
 
@@ -28,20 +28,26 @@ const { width } = useDisplay();
 h1 {
   font-size: 2rem;
   margin-top: -20px;
-  // margin-bottom: 0px;
 }
 h2 {
   font-size: 3.9rem;
   margin-bottom: 0;
   padding-bottom: 0;
-  @media screen and (max-width: 770) {
-    line-height: 3rem;
+
+  @media screen and (max-width: 844px) {
+    line-height: 45px;
   }
 }
+
+// .sideBlock {
+//   @media screen and (max-width: 554px) {
+//     width: 100%;
+//   }
+// }
+
 .heroCard {
   margin-top: 100px;
   font-size: 2rem;
-  padding: 0.5rem 1rem;
   width: 100%;
   height: 200px;
   border-radius: 0;
@@ -50,6 +56,10 @@ h2 {
   z-index: 2;
   @media screen and (max-width: 770px) {
     margin-top: 16px;
+  }
+  @media screen and (max-width: 554px) {
+    height: auto;
+    padding-bottom: 10px;
   }
 }
 
@@ -62,7 +72,7 @@ h2 {
   border-radius: 50%;
   height: 170px;
   max-width: 170px;
-  margin-top: -12px;
+  margin-top: -16px;
   border: rgb(var(--v-theme-bgSecond)) 20px solid;
 }
 

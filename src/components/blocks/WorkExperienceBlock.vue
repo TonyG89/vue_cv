@@ -16,7 +16,7 @@
             <!-- <v-col class="align-self-end" v-if="job?.logo" cols="3">
                 <img class="logo" :src="job.logo" />
               </v-col> -->
-            <v-col cols="6" class="align-self-start text-left">
+            <v-col cols="8" class="align-self-start text-left">
               <div class="d-flex">
                 <h3 class="text-textThird">
                   {{ job.title?.toUpperCase() }}
@@ -39,8 +39,12 @@
                 </h5>
               </div>
             </v-col>
-            <v-col cols="3" class="text-right mb-auto">
-              <h5 class="text-textThird">
+            <v-col cols="4" class="text-right mb-auto">
+              <h5
+                class="text-textThird"
+                style="white-space: pre-wrap"
+                :class="width < 870 && 'smText'"
+              >
                 {{ job.during }}
               </h5>
               <h6 class="mt-2 text-textThird justify-self-end">
@@ -138,6 +142,13 @@ const Block = defineComponent({
 .logo {
   min-width: 100px;
   width: 100px;
+}
+
+h5 {
+  line-height: 17px;
+}
+.smText {
+  // font-size: 0.67rem;
 }
 
 .defaultWidth {

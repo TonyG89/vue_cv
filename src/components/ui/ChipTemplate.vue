@@ -1,7 +1,7 @@
 <template>
   <v-chip
     class="animate mx-2 my-2"
-    :class="width < 1100 ? 'w-100' : ''"
+    :class="width < 1100 && width > 1050 ? 'w-100' : ''"
     v-for="item in chips"
     :key="item.title"
     @click="flags[item.title] = !flags[item.title]"
@@ -15,7 +15,7 @@
         {{ item.title?.toUpperCase() }}
       </h5>
     </div>
-
+    <!-- TODO: hint to chip, not text  -->
     <v-tooltip
       v-if="item.desc"
       class="tooltip"

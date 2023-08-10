@@ -1,5 +1,5 @@
 const aboutMe = {
-  vacancy: "Web Front-End developer",
+  vacancy: "Front-End Developer",
   name: "Anton Hryhoriev",
   birthDate: "07.11.1989",
   text: ["Born in Kyiv, Ukraine, I completed my education at the Kyiv Business Lyceum. Parallel to my studies, I dedicated 6,5 years to practicing Karate-do (Shotokan) and achieved the rank of 2nd Kyu and Candidate Master of Sports.",

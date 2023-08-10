@@ -1,7 +1,11 @@
 <template>
   <div class="sideBlock">
     <ContactsBlock :contacts="contacts" />
-    <!-- <EducationSideBlock title="Education" :data="education" /> -->
+    <EducationSideBlock
+      v-if="width < 1050"
+      title="Education"
+      :data="education"
+    />
     <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
     <CodeStatisticsSideBlock title="My Activity" :data="theoryAndPractice" />
@@ -19,6 +23,9 @@ import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
 import EducationSideBlock from "./blocks/EducationSideBlock.vue";
 import PortfolioSideBlock from "./blocks/PortfolioSideBlock.vue";
 import CodeStatisticsSideBlock from "./blocks/StatisticsSideBlock.vue";
+import { useDisplay } from "vuetify/lib/framework.mjs";
+
+const { width } = useDisplay();
 
 const props = defineProps({
   contacts: Array,

@@ -1,8 +1,8 @@
 <template>
   <div class="mainContainer" fluid>
     <BioBlock :data="aboutMe" />
-    <div class="lgFlex">
-      <EducationBlock :data="education" />
+    <div class="mediaFlex">
+      <EducationBlock v-if="width>1050" :data="education" />
       <HobbyBlock title="hobby" :data="hobby" />
     </div>
     <WorkExperienceBlock :data="experience" />
@@ -22,6 +22,10 @@ import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
 import Portfolio from "./blocks/PortfolioBlock.vue";
 import StatisticsBlock from "./blocks/StatisticsBlock.vue";
+import { useDisplay } from "vuetify/lib/framework.mjs";
+
+const { width } = useDisplay();
+
 defineProps({
   hobby: Array,
   education: Object,
@@ -58,10 +62,13 @@ defineProps({
   }
 }
 
-.lgFlex {
+.mediaFlex {
   @media screen and (max-width: 1250px) {
     display: flex;
     justify-content: space-between;
+  }
+  @media screen and (max-width: 1050px) {
+    display: block;
   }
 }
 
