@@ -1,39 +1,35 @@
 <template>
   <BlockTemplate :title="title">
-    <v-row class="ma-4 pa-2 text-left w-100 d-flex">
+    <div
+      class="text-left w-100 bodyBlock d-flex"
+      :class="width <= 670 ? 'flex-wrap bg-bgFirst col' : 'bg-bgThird'"
+    >
       <v-col>
-        <h3>
-          Development time in VSCode
-          <span class="pr-1 text-textThird font-weight-thin"
-            >from Apr 14, 2023</span
-          >
-        </h3>
+        <h3 class="text-textThird">Development time in VSCode</h3>
+        <p class="pr-1 text-textThird font-weight-thin">from Apr 14, 2023</p>
 
-        <div
-          v-for="block in data.codeTime"
-          :key="block"
-          class="d-flex flex-row align-center ma-2"
-        >
-          <img href="https://codetime.dev" :src="block" />
-          <span class="extraBlock" v-if="data.codeTime.at(-1) === block">
-            {{ stringDaysLeft }}</span
+        <div class="expand" :class="width <= 670 ? '' : 'bg-bgFirst'">
+          <div
+            v-for="block in data.codeTime"
+            :key="block"
+            class="d-flex flex-row align-center mx-2 my-4"
           >
+            <img href="https://codetime.dev" :src="block" />
+            <span class="extraBlock" v-if="data.codeTime.at(-1) === block">
+              {{ stringDaysLeft }}</span
+            >
+          </div>
         </div>
       </v-col>
-      <v-col class="text-right">
-        <h3>
-          GitHub Activities
-          <span class="pr-1 text-textThird font-weight-thin"
-            >from Apr 4, 2022</span
-          >
-        </h3>
+      <v-col :class="width <= 670 ? 'text-left' : 'text-right'">
+        <h3 class="text-textThird">GitHub Activities</h3>
 
+        <p class="pr-1 text-textThird font-weight-thin">from Apr 4, 2022</p>
         <div>
           <img :src="urlLanguages" />
-          <img :src="urlActivities" />
         </div>
       </v-col>
-    </v-row>
+    </div>
     <!-- <img src="https://kounter.tk/badge/TonyG89_cv" /> -->
   </BlockTemplate>
 </template>
@@ -41,15 +37,14 @@
 <script setup>
 import BlockTemplate from "@/components/ui/BlockTemplate.vue";
 import moment from "moment";
+import { useDisplay } from "vuetify/lib/framework.mjs";
+const { width } = useDisplay();
 
 const daysLeft = (moment() - moment("20230414")) / 86400000;
 const stringDaysLeft = `/ ${parseInt(daysLeft)} Days`;
 
 const urlLanguages =
   "https://github-readme-stats.vercel.app/api/top-langs/?username=TonyG89&show_icons=true&hide=true&count_private=true&title_color=263238&text_color=263238&icon_color=E65100&bg_color=ECEFF1&show_icons=true&layout=compact";
-
-const urlActivities =
-  "https://github-readme-streak-stats.herokuapp.com/?user=TonyG89&stroke=546E7A&background=ECEFF1&ring=CFD8DC&fire=546E7A&currStreakNum=263238&currStreakLabel=263238&sideNums=263238&sideLabels=263238&dates=546E7A";
 
 defineProps({
   data: {
@@ -63,6 +58,16 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
+.expand {
+  flex-grow: 1;
+  height: 165px;
+  border: rgba(128, 128, 128, 0.123) 1px solid;
+  border-radius: 5px;
+  min-width: 260px;
+  @media screen and (max-width: 670px) {
+    width: 260px;
+  }
+}
 .extraBlock {
   background: linear-gradient(#e7eaeb, #d5d8d9);
   color: #444444;
@@ -73,5 +78,12 @@ defineProps({
   margin-left: -6px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   // text-shadow: 0px 1px #333333;
+}
+.col {
+  margin-left: -12px;
+}
+.bb {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 </style>

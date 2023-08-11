@@ -1,8 +1,9 @@
 <template>
   <TemplateBlock title="Work experience">
-    <div class="bg-bgThird bodyBlock d-flex flex-wrap">
+    <div class="bg-bgFirst bodyBlock d-flex flex-wrap">
       <div
-        class="ma-4 w-auto d-flex justify-start"
+        class=" w-auto d-flex justify-start"
+        :class="width<=770?'mx-0':'ma-4'"
         v-for="job in data"
         :key="job.title"
       >

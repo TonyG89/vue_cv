@@ -1,20 +1,24 @@
 <template>
   <div class="mainContainer" fluid>
     <BioBlock :data="aboutMe" />
-    <div class="d-flex">
-      <ContactsBlock :contacts="contacts"  />
+    <div class="d-flex flex-wrap">
+      <ContactsBlock :contacts="contacts" />
       <EducationBlock :data="education" />
     </div>
+
+    <div class="mediaFlex">
+      <EducationBlock v-if="width >= 1050" :data="education" />
+      <HobbyBlock title="hobby" :data="hobby" />
+    </div>
+
+    <WorkExperienceBlock :data="experience" />
     <!-- <EducationSideBlock title="Education" :data="education" /> -->
     <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
 
     <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" />
+    <div class="lgFlex"></div>
     <Portfolio title="My Portfolio" />
-    <div class="lgFlex">
-      <HobbyBlock title="hobby" :data="hobby" />
-    </div>
-    <WorkExperienceBlock :data="experience" />
 
     <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
   </div>

@@ -48,9 +48,9 @@
       </div>
     </v-card-text>
   </SideBlockTemplate>
-  <BlockTemplate v-show="width < 770" title="Contacts">
+  <BlockTemplate v-show="width <= 770" title="Contacts">
     <v-card-text
-      class="bg-bgThird w-100 bodyBlock d-flex flex-wrap secondFont font-italic blockWidth"
+      class="bg-bgFirst bodyBlock d-flex flex-wrap secondFont font-italic blockWidth"
     >
       <v-list-item
         class="d-flex flex-col justify-start align-start pa-0 my-2 animate"
@@ -79,13 +79,13 @@
         </a>
       </v-list-item>
 
-      <div class="d-flex flex-wrap justify-space-between w-100">
+      <div class="d-flex flex-wrap justify-start w-100">
         <v-list-item
           v-for="contact in contacts.filter((contact) => !contact.value)"
           :key="contact.title"
           class="px-0"
         >
-          <v-chip label style="width: 100px" class="hover py-4">
+          <v-chip label style="width: 100px" class="hover py-4 mr-4">
             <a
               :href="contact.link"
               class="text-textFirst d-flex"
@@ -130,7 +130,10 @@ a {
 
 .blockWidth {
   width: 100%;
-  max-width: 3000px;
+  max-width: 325px;
+  @media screen and (max-width:770px) {
+    margin-left: -16px;
+  }
 }
 
 .minusMargin {

@@ -7,7 +7,7 @@
       >
         {{ title }}
       </h2>
-        <slot></slot>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -26,8 +26,6 @@ defineProps({
   border: rgb(var(--v-theme-bgSecond)) 3px solid;
   margin-bottom: 0px;
 }
-
-
 
 // .hoverable {
 //   border: rgb(var(--v-theme-bgFirst)) 0px solid;

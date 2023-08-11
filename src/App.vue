@@ -96,6 +96,12 @@ console.log(mobile.value); // true
   @media screen and (max-width: 768px) {
     padding-top: 240px;
   }
+  @media screen and (max-width: 550px) {
+    padding-top: 365px;
+  }
+  @media screen and (max-width: 407px) {
+    padding-top: 410px;
+  }
 }
 
 .bgOpacity {

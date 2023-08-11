@@ -1,8 +1,12 @@
 <template>
   <TemplateBlock :title="title">
-    <div class="bg-bgThird bodyBlock cont d-flex flex-wrap">
+    <div
+      class="bodyBlock cont d-flex flex-wrap"
+      :class="width <= 770 ? 'bg-bgFirst' : 'bg-bgThird'"
+    >
       <v-card
-        class="ma-4 d-flex justify-space-between"
+        class="d-flex justify-space-between"
+        :class="width <= 770 ? 'my-2' : 'ma-4'"
         v-for="institution of data.reverse()"
         :key="institution.title"
         dark
@@ -30,7 +34,8 @@
 
 <script setup>
 import TemplateBlock from "@/components/ui/BlockTemplate.vue";
-
+import { useDisplay } from "vuetify/lib/framework.mjs";
+const { width } = useDisplay();
 defineProps({
   data: {
     type: Object,
@@ -57,11 +62,14 @@ defineProps({
     max-width: 999px;
   }
   @media screen and (max-width: 770px) {
-    background: #000;
+    max-width: 402px;
   }
 }
 .widthBlock {
   width: 370px;
+  @media screen and (max-width: 420px) {
+    width: 327px;
+  }
 }
 .bgLine {
   background: rgba(var(--v-theme-bgThird), 0.6);

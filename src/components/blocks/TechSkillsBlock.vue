@@ -35,20 +35,22 @@
     </div>
   </SideBlockTemplate>
   <BlockTemplate v-show="width < 770" :title="title">
-    <div
-      v-for="(group, ind) in skills"
-      :key="ind"
-      :class="ind !== skills.length - 1 ? 'bottomMargin' : ''"
+    <div class="bg-bgFirst"
     >
-      <v-chip
-        :color="chipColor(ind + 1)"
-        v-for="skill in group"
-        :key="skill.title"
-        class="mr-1 my-1 px-3"
+      <div
+        v-for="(group, ind) in skills"
+        :key="ind"
+        :class="ind !== skills.length - 1 ? 'bottomMargin' : ''"
       >
-        <v-icon :icon="skill.icon" class="mr-1" />
-        <span @click="hideTitle">{{ skill.title }} </span>
-        <!-- <v-tooltip activator="parent" location="right">
+        <v-chip
+          :color="chipColor(ind + 1)"
+          v-for="skill in group"
+          :key="skill.title"
+          class="mr-1 my-1 px-3"
+        >
+          <v-icon :icon="skill.icon" class="mr-1" />
+          <span @click="hideTitle">{{ skill.title }} </span>
+          <!-- <v-tooltip activator="parent" location="right">
                   <div v-if="skill.started" class="text-red">
                     since:{{ skill.started }}(<span class="font-italic"
                     >{{ practiceTime(skill.started) }} </span
@@ -57,16 +59,17 @@
                   <div v-if="skill.hint">{{ skill.hint }}</div>
                   <div class="curve" v-if="skill.stack">{{ skill.stack }}xxx</div>
                 </v-tooltip> -->
-      </v-chip>
-      <v-tooltip activator="parent" location="right">
-        <div
-          class="hint w-full bg-textSecond"
-          :class="`text-${chipColor(ind + 1)}`"
-        >
-          <h3>{{ levelHint[ind][0] }}</h3>
-          <h4 class="font-weight-regular">{{ levelHint[ind][1] }}</h4>
-        </div>
-      </v-tooltip>
+        </v-chip>
+        <v-tooltip activator="parent" location="right">
+          <div
+            class="hint w-full bg-textSecond"
+            :class="`text-${chipColor(ind + 1)}`"
+          >
+            <h3>{{ levelHint[ind][0] }}</h3>
+            <h4 class="font-weight-regular">{{ levelHint[ind][1] }}</h4>
+          </div>
+        </v-tooltip>
+      </div>
     </div>
   </BlockTemplate>
 </template>
@@ -77,7 +80,6 @@ import BlockTemplate from "../ui/BlockTemplate.vue";
 import { ref, onMounted } from "vue";
 import { useDisplay } from "vuetify/lib/framework.mjs";
 const { width } = useDisplay();
-
 
 const hideHint = ref(false);
 

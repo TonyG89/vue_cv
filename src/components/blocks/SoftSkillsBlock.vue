@@ -12,16 +12,18 @@
     </v-chip>
   </SideBlockTemplate>
   <BlockTemplate v-show="width < 770" :title="title">
-    <v-tooltip v-if="group" activator="parent" location="right">
-      {{ group.desc }}
-    </v-tooltip>
-    <v-chip
-      v-for="skill in skills"
-      :key="skill.title"
-      class="mr-1 my-1 boldAnimate"
-    >
-      {{ skill.title.toUpperCase() }}
-    </v-chip>
+    <div class="bg-bgFirst ">
+      <v-tooltip v-if="group" activator="parent" location="right">
+        {{ group.desc }}
+      </v-tooltip>
+      <v-chip
+        v-for="skill in skills"
+        :key="skill.title"
+        class="mr-1 my-1 boldAnimate"
+      >
+        {{ skill.title.toUpperCase() }}
+      </v-chip>
+    </div>
   </BlockTemplate>
 </template>
 
