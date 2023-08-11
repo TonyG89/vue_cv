@@ -5,7 +5,7 @@
       :class="width <= 670 ? 'flex-wrap bg-bgFirst col' : 'bg-bgThird'"
     >
       <v-col>
-        <h3 class="text-textThird">Development time in VSCode</h3>
+        <h3 class="text-textThird text-uppercase">DEVELOPING TIME INVESTED</h3>
         <p class="pr-1 text-textThird font-weight-thin">from Apr 14, 2023</p>
 
         <div class="expand" :class="width <= 670 ? '' : 'bg-bgFirst'">
@@ -20,13 +20,23 @@
             >
           </div>
         </div>
+        <h3 class="text-textThird text-uppercase">Rank in codewars</h3>
+        <img
+          :class="width > 670 && 'minWidthBlock'"
+          :src="codewars"
+          alt="my codewars account"
+        />
       </v-col>
+
       <v-col :class="width <= 670 ? 'text-left' : 'text-right'">
         <h3 class="text-textThird">GitHub Activities</h3>
 
         <p class="pr-1 text-textThird font-weight-thin">from Apr 4, 2022</p>
         <div>
-          <img :src="urlLanguages" />
+          <img
+            :src="urlLanguages"
+            alt="my languages statistic in github account"
+          />
         </div>
       </v-col>
     </div>
@@ -46,6 +56,8 @@ const stringDaysLeft = `/ ${parseInt(daysLeft)} Days`;
 const urlLanguages =
   "https://github-readme-stats.vercel.app/api/top-langs/?username=TonyG89&show_icons=true&hide=true&count_private=true&title_color=263238&text_color=263238&icon_color=E65100&bg_color=ECEFF1&show_icons=true&layout=compact";
 
+const codewars = "https://www.codewars.com/users/okylist/badges/small";
+
 defineProps({
   data: {
     type: Object,
@@ -60,7 +72,7 @@ defineProps({
 <style lang="scss" scoped>
 .expand {
   flex-grow: 1;
-  height: 165px;
+  // height: 165px;
   border: rgba(128, 128, 128, 0.123) 1px solid;
   border-radius: 5px;
   min-width: 260px;
@@ -81,6 +93,10 @@ defineProps({
 }
 .col {
   margin-left: -12px;
+}
+
+.minWidthBlock {
+  width: 260px;
 }
 .bb {
   border-bottom-left-radius: 5px;

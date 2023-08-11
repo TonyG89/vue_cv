@@ -12,7 +12,7 @@ const howLong = moment('202202', 'YYYYMM').fromNow(true);
 const hobby = [
   new Hobby('skate', 'skateboarding', 'Riding through the city streets and downhill'),
   new Hobby('football', 'soccer', 'Play football for fun'),
-  new Hobby('jogging', 'run', 'like jogging near lake'),
+  new Hobby('jogging', 'run', 'like jogging nearly lake'),
   new Hobby('travelling', 'rv-truck', 'Tent, forest or riverside, and campfire'),
   // new Hobby('Electronic', 'soldering-iron', 'I enjoy disassembling and repairing technical devices, soldering, and even experimenting with breaking things'),
   new Hobby('walking', 'dog-service', 'Walking with my dog - a time of relaxation and contemplation'),
