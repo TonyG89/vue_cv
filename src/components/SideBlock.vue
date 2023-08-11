@@ -10,7 +10,10 @@
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
     <CodeStatisticsSideBlock title="My Activity" :data="theoryAndPractice" />
     <LanguagesBlock />
-    <PortfolioSideBlock title="My Portfolio" />
+    <PortfolioSideBlock
+      v-show="width >= 1050 || width < 830"
+      title="My Portfolio"
+    />
   </div>
 </template>
 

@@ -265,4 +265,8 @@ a {
     opacity: 1;
   }
 }
+
+.test {
+  border: red 2px solid;
+}
 </style>

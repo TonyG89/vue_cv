@@ -1,5 +1,5 @@
 <template>
-  <SideBlockTemplate :title="title">
+  <SideBlockTemplate v-show="width > 770" :title="title">
     <v-tooltip v-if="group" activator="parent" location="right">
       {{ group.desc }}
     </v-tooltip>
@@ -10,12 +10,28 @@
     >
       {{ skill.title.toUpperCase() }}
     </v-chip>
-    <!-- Добавьте другие скилы -->
   </SideBlockTemplate>
+  <BlockTemplate v-show="width < 770" :title="title">
+    <v-tooltip v-if="group" activator="parent" location="right">
+      {{ group.desc }}
+    </v-tooltip>
+    <v-chip
+      v-for="skill in skills"
+      :key="skill.title"
+      class="mr-1 my-1 boldAnimate"
+    >
+      {{ skill.title.toUpperCase() }}
+    </v-chip>
+  </BlockTemplate>
 </template>
 
 <script setup>
 import SideBlockTemplate from "@/components/ui/SideBlockTemplate.vue";
+import BlockTemplate from "@/components/ui/BlockTemplate.vue";
+import { ref, onMounted } from "vue";
+import { useDisplay } from "vuetify/lib/framework.mjs";
+const { width } = useDisplay();
+
 const props = defineProps({
   title: {
     type: String,

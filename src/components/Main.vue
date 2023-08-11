@@ -2,13 +2,13 @@
   <div class="mainContainer" fluid>
     <BioBlock :data="aboutMe" />
     <div class="mediaFlex">
-      <EducationBlock v-if="width>1050" :data="education" />
+      <EducationBlock v-if="width >= 1050" :data="education" />
       <HobbyBlock title="hobby" :data="hobby" />
     </div>
     <WorkExperienceBlock :data="experience" />
 
     <!-- <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" /> -->
-    <!-- <Portfolio title="Portfolio" /> -->
+    <Portfolio title="My Portfolio" v-show="width < 1050 && width >= 830" />
     <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
   </div>
 </template>

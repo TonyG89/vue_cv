@@ -81,10 +81,7 @@ defineProps({
   transform: rotate(180deg);
 }
 
-.textblockBottom {
-  bottom: 10%;
-  margin-top: 150px;
-}
+
 </style>
 
 <!-- 

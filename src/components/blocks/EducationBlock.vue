@@ -2,13 +2,13 @@
   <TemplateBlock :title="title">
     <div class="bg-bgThird bodyBlock cont d-flex flex-wrap">
       <v-card
-        class="ma-4 d-flex justify-space-between "
+        class="ma-4 d-flex justify-space-between"
         v-for="institution of data.reverse()"
         :key="institution.title"
         dark
       >
         <v-card-text
-          class="d-flex flex-column justify-space-between widthBlock "
+          class="d-flex flex-column justify-space-between widthBlock"
         >
           <div>
             <h3 class="text-textThird mb-1" style="white-space: pre-wrap">
@@ -55,6 +55,9 @@ defineProps({
   }
   @media screen and (max-width: 1050px) {
     max-width: 999px;
+  }
+  @media screen and (max-width: 770px) {
+    background: #000;
   }
 }
 .widthBlock {

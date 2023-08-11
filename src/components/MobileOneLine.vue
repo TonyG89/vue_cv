@@ -1,15 +1,17 @@
 <template>
   <div class="mainContainer" fluid>
-    <ContactsBlock :contacts="contacts" />
+    <BioBlock :data="aboutMe" />
+    <div class="d-flex">
+      <ContactsBlock :contacts="contacts"  />
+      <EducationBlock :data="education" />
+    </div>
     <!-- <EducationSideBlock title="Education" :data="education" /> -->
     <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
 
     <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" />
-    <Portfolio title="Portfolio" />
-    <BioBlock :data="aboutMe" />
+    <Portfolio title="My Portfolio" />
     <div class="lgFlex">
-      <EducationBlock :data="education" />
       <HobbyBlock title="hobby" :data="hobby" />
     </div>
     <WorkExperienceBlock :data="experience" />

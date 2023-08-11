@@ -3,7 +3,7 @@
     <v-container
       fluid
       class="d-flex bg-bgThird flex-wrap secondFont mr-2"
-      :class="width < 1250 && 'mobWidth' "
+      :class="width < 1250 && 'mobWidth'"
     >
       <ChipTemplate textColor="text-bgSecond" :chips="data" />
     </v-container>
@@ -47,7 +47,6 @@ const props = defineProps({
   width: 300px;
   text-shadow: 1px 1px 2px black;
 }
-
 .tooltip {
 }
 </style>

@@ -6,7 +6,7 @@
         href="https://tonyg89.github.io/portfolio/"
         target="_blank"
       >
-        <div class="textblockBottom d-flex text-textSecond">
+        <div class="d-flex text-textSecond">
           <h3 class="mb-2">Click Here</h3>
         </div>
       </v-btn>

@@ -1,7 +1,10 @@
 <template>
   <v-chip
     class="animate mx-2 my-2"
-    :class="width < 1100 && width > 1050 ? 'w-100' : ''"
+    :class="[
+      width < 1100 && width > 1050 ? 'w-100' : '',
+      width <= 770 && 'maxCol',
+    ]"
     v-for="item in chips"
     :key="item.title"
     @click="flags[item.title] = !flags[item.title]"
@@ -50,6 +53,13 @@ defineProps({
 .img {
   padding: 40px;
   margin-right: -10px;
+}
+.maxCol {
+  width: 100%;
+  max-width: 140px;
+  @media screen and (max-width: 560px) {
+    max-width: fit-content;
+  }
 }
 
 .heightBlock {
