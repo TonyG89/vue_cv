@@ -1,22 +1,16 @@
 <template>
-  <v-main class="bgImg ml-4 w-50">
-    <v-container fluid>
-      <HeroBlock class="mb-10" :data="aboutMe" />
-      <!-- BLOCK 2 -->
-      <div class="d-flex align-baseline">
-        <BioBlock :data="aboutMe" />
-        <EducationBlock :data="education" />
-      </div>
-      <!-- BLOCK 3 -->
-      <div class="d-flex align-baseline my-8">
-        <WorkExperienceBlock :data="experience" />
-        <HobbyBlock title="hobby" :data="hobby" />
-      </div>
-      <!--  -->
-      <TheoryAndPracticeBlock :data="theoryAndPractice" />
-      <!--  -->
-    </v-container>
-  </v-main>
+  <div class="mainContainer" fluid>
+    <BioBlock :data="aboutMe" />
+    <div class="mediaFlex">
+      <EducationBlock v-if="width >= 1050" :data="education" />
+      <HobbyBlock title="hobby" :data="hobby" />
+    </div>
+    <WorkExperienceBlock :data="experience" />
+
+    <!-- <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" /> -->
+    <Portfolio title="My Portfolio" v-show="width < 1050 && width >= 830" />
+    <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
+  </div>
 </template>
 
 <script setup>
@@ -24,106 +18,62 @@ import TextBlock from "./blocks/TextBlock.vue";
 import HobbyBlock from "./blocks/HobbyBlock.vue";
 import EducationBlock from "./blocks/EducationBlock.vue";
 import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
-import HeroBlock from "./blocks/HeroBlock.vue";
 import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
-import {
-  hobby,
-  education,
-  experience,
-  aboutMe,
-  theoryAndPractice,
-} from "@/data";
+import Portfolio from "./blocks/PortfolioBlock.vue";
+import StatisticsBlock from "./blocks/StatisticsBlock.vue";
+import { useDisplay } from "vuetify/lib/framework.mjs";
+
+const { width } = useDisplay();
+
+defineProps({
+  hobby: Array,
+  education: Object,
+  experience: Array,
+  aboutMe: Object,
+  theoryAndPractice: Object,
+});
 </script>
 
 <style lang="scss">
+.mainContainer {
+  // z-index: 1;
+  // transform: translateX(-11px);
+  width: 100%;
+  background-color: rgb(var(--v-theme-bgFirst));
+}
+
 .header-card {
-  background-color: #333333;
   text-align: center;
-  animation: fadeIn 1s;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.v-main {
+  // max-width: 1000px;
+}
+
+.mobWidth {
+  width: 325px;
+}
+
+.blockAnimate {
+  div {
+    animation: fadeIn 1s;
+  }
+}
+
+.mediaFlex {
+  @media screen and (max-width: 1250px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 1050px) {
+    display: block;
+  }
 }
 
 .cardBlock {
   max-width: 600px;
   width: auto;
-}
-
-.animate {
-  transition: all 1.2s ease-out;
-  > div {
-    transition: all 1.2s ease-out;
-    .icon {
-      transition: all 1.2s ease-out;
-    }
-  }
-  &:hover {
-    transform: translateY(-2px);
-    transition: transform 0.5s linear;
-    > div {
-      //:not(:last-child)
-      filter: invert(100%);
-      transition: all 0.5s ease-in;
-    }
-    .icon {
-      transform: scale(1.2);
-      transition: all 0.3s ease-in-out;
-    }
-  }
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: scale(1);
-  }
-  40% {
-    transform: scale(1.2);
-  }
-  60% {
-    transform: scale(0.8);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.contact-card,
-.about-card,
-.education-card,
-.experience-card,
-.skills-card,
-.hobbies-card {
-  animation: slideInUp 1s;
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>

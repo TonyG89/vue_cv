@@ -1,48 +1,67 @@
 <template>
-  <div class="w-25" app permanent>
-    <!-- БЛОК: Фотография и контакты -->
+  <div class="sideBlock">
     <ContactsBlock :contacts="contacts" />
-    <TechSkillsBlock title="Soft Skills" :skills="techSkillsClass" />
-    <SoftSkillsBlock title="Hard Skills" :skills="softSkills" />
-    <!-- <SoftSkillsBlock title="techSkillsClass" :skills="techSkillsClass" /> -->
-    <!-- Английский язык -->
+    <EducationSideBlock
+      v-if="width < 1050"
+      title="Education"
+      :data="education"
+    />
+    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
+    <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
+    <CodeStatisticsSideBlock title="My Activity" :data="theoryAndPractice" />
     <LanguagesBlock />
+    <PortfolioSideBlock
+      v-show="width >= 1050 || width < 830"
+      title="My Portfolio"
+    />
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import ContactsBlock from "@/components/blocks/ContactsBlock.vue";
 import TechSkillsBlock from "@/components/blocks/TechSkillsBlock.vue";
 import SoftSkillsBlock from "@/components/blocks/SoftSkillsBlock.vue";
 import LanguagesBlock from "@/components/blocks/LanguagesBlock.vue";
-import { contacts, skills } from "@/data/";
-const { softSkills, techSkillsClass } = skills();
+import EducationSideBlock from "./blocks/EducationSideBlock.vue";
+import PortfolioSideBlock from "./blocks/PortfolioSideBlock.vue";
+import CodeStatisticsSideBlock from "./blocks/StatisticsSideBlock.vue";
+import { useDisplay } from "vuetify/lib/framework.mjs";
+
+const { width } = useDisplay();
+
+const props = defineProps({
+  contacts: Array,
+  skills: Function,
+  education: Array,
+  theoryAndPractice: Object,
+});
+
+const { softSkills, techSkillsClass } = props.skills();
+console.log(window.innerWidth);
 </script>
 
 <style lang="scss">
-/* Стили как ранее */
-
-/* Анимации как ранее */
+.sideBlock {
+  max-width: 400px;
+  width: 400px;
+}
 
 .side-menu-card {
-  margin: 16px;
+  margin: 4px 16px;
   padding: 16px;
-  background-color: #333333;
-  color: #ffffff;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: rgb(var(--v-theme-bgFirst));
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: slideInLeft 1s;
 }
 
-.side-menu-card:first-child {
-  margin-top: 100px; /* Отступ для первого элемента */
-}
-
-.side-menu-card:not(:first-child) {
-  margin-top: 24px; /* Отступ между элементами */
+.bg-none {
+  background: #00000000;
 }
 
 .side-menu-card:hover {
-  background-color: #5c2e2e;
+  background-color: rgb(var(--v-theme-bgFirst));
 }
 </style>

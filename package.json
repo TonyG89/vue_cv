@@ -7,10 +7,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
     "@mdi/font": "7.0.96",
     "country-flag-icons": "^1.5.7",
     "flag-icons": "^6.9.2",
+    "fortawesome": "^0.0.1-security",
     "material-icons-font": "^2.1.0",
+    "moment": "^2.29.4",
     "roboto-fontface": "*",
     "sass": "^1.64.1",
     "vue": "^3.2.38",

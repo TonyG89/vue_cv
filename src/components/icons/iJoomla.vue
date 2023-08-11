@@ -1,5 +1,5 @@
 <template>
-  <div class="icon mb-1">
+  <div class="size mb-1">
     <svg
       :fill="color"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,13 +18,13 @@
 defineProps({
   color: {
     type: String,
-    default: "grey",
+    default: "#78909C",
   },
 });
 </script>
 
 <style lang="scss" scoped>
-.icon {
+.size {
   width: 21px;
   height: 21px;
 }

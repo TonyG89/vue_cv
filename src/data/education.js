@@ -1,13 +1,14 @@
 const education = [{
-  title: "OIUHD 'Ukraine'", //"The Opened International University of Human Development «UKRAINE»",
+  title: "The Opened International University of Human Development «UKRAINE»", //"The Opened International University of Human Development «UKRAINE»",
   text: "Faculty of Finance and Credit | Finance",
-  date: "September 2007 - Jule 2012",
+  // pos: "Finance",
+  date: "2007 - 2012",
   place: "Ukraine | Kyiv",
   img: "uuniversity.png",
 },
 {
-  title: "Kyiv Business Lyceum 'LECOS'",
-  date: "September 2003 - June 2007",
+  title: "Kyiv Business Lyceum\n«LECOS»",
+  date: "2003 - 2007",
   place: "Ukraine | Kyiv",
   img: "klb.png",
 }]

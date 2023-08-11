@@ -30,7 +30,7 @@
 defineProps({
   color: {
     type: String,
-    default: "#4CAF50",
+    default: "#1B5E20",
   },
 });
 </script>

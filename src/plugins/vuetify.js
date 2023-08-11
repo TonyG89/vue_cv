@@ -19,20 +19,23 @@ export default createVuetify({
     themes: {
       light: {
         colors: {
-          primary: '#1867C0',
-          secondary: '#5CBBF6',
-          first: '#2196F3', // blue
-          second: '#673AB7', //indigo
-          third: '#546E7A', //blue-grey-darken-1
+          primary: '#CDDC39',
+          secondary: '#DCE775',
+
+          first: '#1B5E20',
+          second: '#689F38',
+          third: '#9E9D24', //blue-grey-darken-1
+          fourth: '#78909C', //red
+
           background: '#546E7A', //deep-purple
           wrapper: '#CDDC39', //lime
           test: '#E65100',
-          textFirst: '#999D1A',
-          textSecond: '#546E7A',
-          textThird: '#546E7A',
-          bgFirst: '#999D1A',
-          bgSecond: '#546E7A',
-          bgThird: '#292930',
+          textFirst: '#263238', // hero
+          textSecond: '#FFFDE7', // hero
+          textThird: '#455A64', // 
+          bgFirst: '#ECEFF1', // sideblock
+          bgSecond: '#546E7A', // hero
+          bgThird: '#CFD8DC', // hero
         },
       },
     },
