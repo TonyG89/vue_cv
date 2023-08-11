@@ -97,10 +97,10 @@ console.log(mobile.value); // true
     padding-top: 240px;
   }
   @media screen and (max-width: 550px) {
-    padding-top: 365px;
+    padding-top: 380px;
   }
   @media screen and (max-width: 407px) {
-    padding-top: 410px;
+    padding-top: 425px;
   }
 }
 

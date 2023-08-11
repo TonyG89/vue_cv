@@ -25,9 +25,9 @@ const experience = [
     "dates": ["06.2012", "06.2016"],
     "during": "4 years",
     "text": "Creation of sites on pure html, as well as in wordpress and joomla systems. Connecting a site to a domain. Provided services of a content manager, site cleaning from garbage, SEO optimization.",
+    "skills": 'html, css, joomla, wordpress, php',
     "logo": "workBlock/2up.png",
     "location": "Ukraine Kyiv",
-    "skills": 'html, css, joomla, wordpress, php'
   }
 ]
 
