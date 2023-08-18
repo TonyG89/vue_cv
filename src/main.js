@@ -16,17 +16,21 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-
+import { inject } from '@vercel/analytics';
 /* add icons to the library */
+import { registerPlugins } from '@/plugins'
+
 library.add(faUserSecret)
 
 // Plugins
-import { registerPlugins } from '@/plugins'
 
 const app = createApp(App)
+
+const analitics = inject()
 
 registerPlugins(app)
 
 app
   .component('font-awesome-icon', FontAwesomeIcon)
+  .use(analitics)
   .mount('#app')
