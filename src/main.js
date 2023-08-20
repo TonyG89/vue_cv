@@ -23,7 +23,6 @@ import { registerPlugins } from '@/plugins'
 library.add(faUserSecret)
 
 // Plugins
-
 const app = createApp(App)
 
 const analitics = inject()
