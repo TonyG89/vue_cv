@@ -96,7 +96,7 @@ defineProps({
 }
 
 .minWidthBlock {
-  width: 260px;
+  min-width: 260px;
 }
 .bb {
   border-bottom-left-radius: 5px;

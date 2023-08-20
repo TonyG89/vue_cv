@@ -19,7 +19,8 @@
 
         <div class="my-4">
           <h4 class="text-textThird text-uppercase mb-1">Rank in codewars</h4>
-          <img :src="codewars" alt="my codewars account" />
+
+          <img class="codewar" :src="codewars" alt="my codewars account" />
         </div>
 
         <h4 class="text-textThird text-uppercase">GitHub Repositories</h4>
@@ -67,7 +68,9 @@ defineProps({
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   // text-shadow: 0px 1px #333333;
 }
-.m-x-2 {
-  // margin: 0 rem;
+
+.codewar {
+  min-width: 160px;
+
 }
 </style>

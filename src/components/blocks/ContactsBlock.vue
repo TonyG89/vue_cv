@@ -50,7 +50,8 @@
   </SideBlockTemplate>
   <BlockTemplate v-show="width <= 770" title="Contacts">
     <v-card-text
-      class="bg-bgFirst bodyBlock d-flex flex-wrap secondFont font-italic blockWidth"
+      class="bg-bgFirst bodyBlock d-flex flex-wrap blockWidth"
+      :class="width > 770 && 'secondFont font-italic'"
     >
       <v-list-item
         class="d-flex flex-col justify-start align-start pa-0 my-2 animate"
@@ -131,7 +132,7 @@ a {
 .blockWidth {
   width: 100%;
   max-width: 325px;
-  @media screen and (max-width:770px) {
+  @media screen and (max-width: 770px) {
     margin-left: -16px;
   }
 }

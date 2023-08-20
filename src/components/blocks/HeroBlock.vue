@@ -9,7 +9,9 @@
           })`"
         />
       </v-col>
-      <v-col class="text-left ml-3 mt-5 d-flex flex-column-reverse justify-end">
+      <v-col class="text-left ml-3  d-flex flex-column-reverse justify-end"
+      :class="width > 550? 'mt-5': 'mt-0'"
+      >
         <!-- BLOCK-REVERSE -->
         <h1 class="text-textThird textAnimate">{{ aboutMe.vacancy }}</h1>
         <h2 class="text-uppercase textAnimate">{{ aboutMe.name }}</h2>
@@ -39,11 +41,12 @@ h2 {
   }
 }
 
-// .sideBlock {
-//   @media screen and (max-width: 554px) {
-//     width: 100%;
-//   }
-// }
+.sideBlock {
+  @media screen and (max-width: 554px) {
+    width: 100%;
+    margin: 30px auto 0;
+  }
+}
 
 .heroCard {
   margin-top: 100px;

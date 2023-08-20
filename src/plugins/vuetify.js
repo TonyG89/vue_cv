@@ -32,7 +32,7 @@ export default createVuetify({
           test: '#E65100',
           textFirst: '#263238', // hero
           textSecond: '#FFFDE7', // hero
-          textThird: '#455A64', // 
+          textThird: '#455A64', //
           bgFirst: '#ECEFF1', // sideblock
           bgSecond: '#546E7A', // hero
           bgThird: '#CFD8DC', // hero
