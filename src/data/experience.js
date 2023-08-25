@@ -5,7 +5,7 @@ const experience = [
     "type": "product",
     "dates": ["02.2023", "07.2023"],
     "during": "6 months",
-    "text": "We was developing a complex CRM application with authentication, notifications, chat, and data tracking in tables and dashboards. Data was obtained from various APIs, and we interacted with them using CRUD mechanisms. The development was conducted following the Kanban methodology, with effective team collaboration through Jira, Confluence, and Bitbucket platforms.",
+    "text": "We were developing a complex CRM application with authentication, notifications, chat, and data tracking in tables and dashboards. Data was obtained from various APIs, and we interacted with them using CRUD mechanisms. The development was conducted following the Kanban methodology, with effective team collaboration through Jira, Confluence, and Bitbucket platforms.",
     "skills": "vue, vuetify, pinia, sass, ag-grid, swagger, kanban, bitbucket, jira, confluence",
     "logo": "workBlock/fis.svg",
     "location": "Ukraine Kyiv"
