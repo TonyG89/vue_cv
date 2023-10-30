@@ -28,7 +28,7 @@
         </a>
       </v-list-item>
 
-      <div class="d-flex justify-space-between">
+      <!-- <div class="d-flex justify-space-between">
         <v-list-item
           v-for="contact in contacts.filter((contact) => !contact.value)"
           :key="contact.title"
@@ -45,7 +45,7 @@
             >
           </v-chip>
         </v-list-item>
-      </div>
+      </div> -->
     </v-card-text>
   </SideBlockTemplate>
   <BlockTemplate v-show="width <= 770" title="Contacts">
