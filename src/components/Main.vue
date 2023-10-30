@@ -3,7 +3,7 @@
     <BioBlock :data="aboutMe" />
     <div class="mediaFlex">
       <EducationBlock v-if="width >= 1050" :data="education" />
-      <HobbyBlock title="hobby" :data="hobby" />
+      <!-- <HobbyBlock title="hobby" :data="hobby" /> -->
     </div>
     <WorkExperienceBlock :data="experience" />
 
