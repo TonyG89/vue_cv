@@ -8,19 +8,13 @@
 
     <div class="mediaFlex">
       <EducationBlock v-if="width >= 1050" :data="education" />
-      <!-- <HobbyBlock title="hobby" :data="hobby" /> -->
     </div>
 
     <WorkExperienceBlock :data="experience" />
-    <!-- <EducationSideBlock title="Education" :data="education" /> -->
-    <!-- <SoftSkillsBlock title="Soft Skills" :skills="softSkills" /> -->
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
 
     <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" />
     <div class="lgFlex"></div>
-    <!-- <Portfolio title="My Portfolio" /> -->
-
-    <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
   </div>
 </template>
 

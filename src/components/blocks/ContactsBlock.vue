@@ -28,24 +28,7 @@
         </a>
       </v-list-item>
 
-      <!-- <div class="d-flex justify-space-between">
-        <v-list-item
-          v-for="contact in contacts.filter((contact) => !contact.value)"
-          :key="contact.title"
-          class="px-0"
-        >
-          <v-chip label style="width: 120px" class="hover py-4">
-            <a
-              :href="contact.link"
-              class="text-textFirst d-flex pl-3"
-              target="_blank"
-            >
-              <v-icon class="mr-1" size="20"> mdi-{{ contact.icon }}</v-icon>
-              <h5 class="text-uppercase">{{ contact.title }}</h5></a
-            >
-          </v-chip>
-        </v-list-item>
-      </div> -->
+
     </v-card-text>
   </SideBlockTemplate>
   <BlockTemplate v-show="width <= 770" title="Contacts">
@@ -80,24 +63,7 @@
         </a>
       </v-list-item>
 
-      <!-- <div class="d-flex flex-wrap justify-start w-100">
-        <v-list-item
-          v-for="contact in contacts.filter((contact) => !contact.value)"
-          :key="contact.title"
-          class="px-0"
-        >
-          <v-chip label style="width: 100px" class="hover py-4 mr-4">
-            <a
-              :href="contact.link"
-              class="text-textFirst d-flex"
-              target="_blank"
-            >
-              <v-icon class="mr-1" size="20"> mdi-{{ contact.icon }}</v-icon>
-              <h5 class="text-uppercase">{{ contact.title }}</h5></a
-            >
-          </v-chip>
-        </v-list-item>
-      </div> -->
+
     </v-card-text>
   </BlockTemplate>
 </template>

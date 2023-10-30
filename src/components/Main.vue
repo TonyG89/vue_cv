@@ -3,13 +3,9 @@
     <BioBlock :data="aboutMe" />
     <div class="mediaFlex">
       <EducationBlock v-if="width >= 1050" :data="education" />
-      <!-- <HobbyBlock title="hobby" :data="hobby" /> -->
     </div>
     <WorkExperienceBlock :data="experience" />
 
-    <!-- <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" /> -->
-    <!-- <Portfolio title="My Portfolio" v-show="width < 1050 && width >= 830" /> -->
-    <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
   </div>
 </template>
 
@@ -37,8 +33,6 @@ defineProps({
 
 <style lang="scss">
 .mainContainer {
-  // z-index: 1;
-  // transform: translateX(-11px);
   width: 100%;
   background-color: rgb(var(--v-theme-bgFirst));
 }
@@ -49,7 +43,6 @@ defineProps({
   border-top-right-radius: 0;
 }
 .v-main {
-  // max-width: 1000px;
 }
 
 .mobWidth {
