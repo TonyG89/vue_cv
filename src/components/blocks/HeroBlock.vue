@@ -76,7 +76,7 @@ h2 {
   height: 170px;
   max-width: 170px;
   margin-top: -16px;
-  border: rgb(var(--v-theme-bgSecond)) 20px solid;
+  // border: rgb(var(--v-theme-bgSecond)) 20px solid;
 }
 
 .textAnimate {
