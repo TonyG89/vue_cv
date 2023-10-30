@@ -8,7 +8,7 @@
     <WorkExperienceBlock :data="experience" />
 
     <!-- <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" /> -->
-    <Portfolio title="My Portfolio" v-show="width < 1050 && width >= 830" />
+    <!-- <Portfolio title="My Portfolio" v-show="width < 1050 && width >= 830" /> -->
     <!-- <TheoryAndPracticeBlock :data="theoryAndPractice" /> -->
   </div>
 </template>
@@ -20,7 +20,7 @@ import EducationBlock from "./blocks/EducationBlock.vue";
 import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
 import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
-// import Portfolio from "./blocks/PortfolioBlock.vue";
+import Portfolio from "./blocks/PortfolioBlock.vue";
 import StatisticsBlock from "./blocks/StatisticsBlock.vue";
 import { useDisplay } from "vuetify/lib/framework.mjs";
 
