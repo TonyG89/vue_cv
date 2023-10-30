@@ -80,7 +80,7 @@
         </a>
       </v-list-item>
 
-      <div class="d-flex flex-wrap justify-start w-100">
+      <!-- <div class="d-flex flex-wrap justify-start w-100">
         <v-list-item
           v-for="contact in contacts.filter((contact) => !contact.value)"
           :key="contact.title"
@@ -97,7 +97,7 @@
             >
           </v-chip>
         </v-list-item>
-      </div>
+      </div> -->
     </v-card-text>
   </BlockTemplate>
 </template>
