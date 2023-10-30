@@ -68,7 +68,7 @@ h2 {
 
 .avatar {
   box-sizing: content-box;
-  background: url("/me.jpg");
+  // background: url("/me.jpg");
   background-size: cover;
   background-position-x: center;
 

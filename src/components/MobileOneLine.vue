@@ -31,7 +31,7 @@ import EducationBlock from "./blocks/EducationBlock.vue";
 import WorkExperienceBlock from "./blocks/WorkExperienceBlock.vue";
 import BioBlock from "./blocks/BioBlock.vue";
 import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
-import Portfolio from "./blocks/PortfolioBlock.vue";
+// import Portfolio from "./blocks/PortfolioBlock.vue";
 import StatisticsBlock from "./blocks/StatisticsBlock.vue";
 import ContactsBlock from "./blocks/ContactsBlock.vue";
 import SoftSkillsBlock from "./blocks/SoftSkillsBlock.vue";
