@@ -6,7 +6,7 @@
       title="Education"
       :data="education"
     />
-    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
+    <!-- <SoftSkillsBlock title="Soft Skills" :skills="softSkills" /> -->
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
     <CodeStatisticsSideBlock title="My Activity" :data="theoryAndPractice" />
     <LanguagesBlock />
