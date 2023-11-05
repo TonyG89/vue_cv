@@ -58,7 +58,7 @@ defineProps({
 
 .blockAnimate {
   div {
-    animation: fadeIn 1s;
+    animation: fadeIn 0.5s;
   }
 }
 

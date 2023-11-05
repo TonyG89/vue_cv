@@ -4,7 +4,8 @@
     class="text-textThird d-flex flex-column justify-center mr-6 ml-2 mt-2 block"
   >
     <h6 class="">
-      {{ dates[1] }}<v-icon class="ml-2 mb-1">mdi-arrow-up-circle</v-icon>
+      {{ dates[1] || nowDate
+      }}<v-icon class="ml-2 mb-1">mdi-arrow-up-circle</v-icon>
     </h6>
     <div class="dot"></div>
     <h6 class="">
@@ -14,9 +15,11 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+const nowDate = ref(new Date().getMonth() + 1 + "." + new Date().getFullYear());
 defineProps({
   dates: {
-    type: Array, // [start,end]
+    type: Array, // ['06.2012','06.2014']
     require: true,
   },
   hidden: {

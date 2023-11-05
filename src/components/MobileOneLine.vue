@@ -13,7 +13,7 @@
 
     <WorkExperienceBlock :data="experience" />
     <!-- <EducationSideBlock title="Education" :data="education" /> -->
-    <SoftSkillsBlock title="Soft Skills" :skills="softSkills" />
+    <!-- <SoftSkillsBlock title="Soft Skills" :skills="softSkills" /> -->
     <TechSkillsBlock title="Tech Skills" :skills="techSkillsClass" />
 
     <StatisticsBlock title="Code Statistics" :data="theoryAndPractice" />
@@ -34,7 +34,7 @@ import TheoryAndPracticeBlock from "./blocks/TheoryAndPracticeBlock.vue";
 import Portfolio from "./blocks/PortfolioBlock.vue";
 import StatisticsBlock from "./blocks/StatisticsBlock.vue";
 import ContactsBlock from "./blocks/ContactsBlock.vue";
-import SoftSkillsBlock from "./blocks/SoftSkillsBlock.vue";
+// import SoftSkillsBlock from "./blocks/SoftSkillsBlock.vue";
 import TechSkillsBlock from "./blocks/TechSkillsBlock.vue";
 
 const { softSkills, techSkillsClass } = props.skills();
@@ -74,7 +74,7 @@ const props = defineProps({
 
 .blockAnimate {
   div {
-    animation: fadeIn 1s;
+    animation: fadeIn 0.5s;
   }
 }
 

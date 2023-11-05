@@ -1,15 +1,24 @@
 <template>
   <TemplateBlock title="biography">
     <v-list
-      class="text-left static my-auto"
+      class="text-left static my-auto pa-4"
       :class="width <= 770 ? 'bg-bgFirst pl0' : 'bg-bgThird '"
     >
-      <v-list-item v-if="typeof data.text === 'string'">
-        <p style="text-indent: 15px" class="textJustify">{{ data.text }}</p>
-      </v-list-item>
-      <v-list-item v-else v-for="par of data.text" :key="par"
-        ><p style="text-indent: 15px" class="textJustify">{{ par }}</p>
-      </v-list-item>
+      <p
+        v-if="typeof data.text === 'string'"
+        style="text-indent: 15px"
+        class="textJustify my-0 p-0"
+      >
+        {{ data.text }}
+      </p>
+      <p
+        v-else
+        v-for="par of data.text"
+        :key="par"
+        style="text-indent: 15px"
+        class="textJustify my-0 py-1"
+        >{{ par }}
+      </p>
     </v-list>
   </TemplateBlock>
 </template>
@@ -31,6 +40,9 @@ defineProps({
 <style lang="scss" scoped>
 .pl0 {
   margin-left: -16px;
+}
+p{
+  font-weight: 500;
 }
 .logo {
   min-width: 100px;

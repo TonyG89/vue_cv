@@ -1,6 +1,7 @@
 <template>
   <v-app class="wrapper app" fluid>
     <HeroBlock />
+    <!-- DESKTOP VERSION -->
     <div class="d-flex w-100" v-if="width > 770">
       <SideBlock
         :hobby="hobby"
@@ -21,6 +22,7 @@
         class="afterHeader"
       />
     </div>
+    <!-- MOBILE VERSION -->
     <MobileOneLine
       v-else
       :hobby="hobby"

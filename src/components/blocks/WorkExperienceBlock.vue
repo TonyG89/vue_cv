@@ -2,8 +2,8 @@
   <TemplateBlock title="Work experience">
     <div class="bg-bgFirst bodyBlock d-flex flex-wrap">
       <div
-        class=" w-auto d-flex justify-start"
-        :class="width<=770?'mx-0':'ma-4'"
+        class="w-auto d-flex justify-start"
+        :class="width <= 770 ? 'mx-0' : 'ma-4'"
         v-for="job in data"
         :key="job.title"
       >
@@ -23,9 +23,6 @@
                   {{ job.title?.toUpperCase() }}
                 </h3>
               </div>
-
-              <!-- <div class="justify-space-between d-flex flex-column">
-                      <p>company:</p> -->
               <div>
                 <h4 class="text-fourth">{{ job.place }}</h4>
                 <h5 v-if="job.type" class="text-textThird text-capitalize">
@@ -46,7 +43,7 @@
                 style="white-space: pre-wrap"
                 :class="width < 870 && 'smText'"
               >
-                {{ job.during }}
+                {{ job.during || duringState(job.dates) }}
               </h5>
               <h6 class="mt-2 text-textThird justify-self-end">
                 {{ job.location }}
@@ -87,6 +84,20 @@ import { experience } from "@/data";
 import { useDisplay } from "vuetify";
 
 const { width, mobile } = useDisplay();
+
+const duringState = (start) => {
+  const monthTime = 1000 * 60 * 60 * 24 * 30;
+  const date = (val) => {
+    const [month, year] = val.split(".");
+    console.log(new Date(year, month - 1).getTime());
+    return new Date(year, month - 1).getTime();
+  };
+  const startTime = date(start[0]);
+  // debugger;
+  const endTime = start[1] ? date(start[1]) : new Date().getTime();
+  const res = (endTime - startTime) / monthTime;
+  return `${Math.ceil(res)} months`;
+};
 
 onMounted(() => {
   width.value < 950 && console.log(width.value);
@@ -146,7 +157,7 @@ const Block = defineComponent({
 }
 
 h5 {
-  line-height: 17px;
+  line-height: 24px;
 }
 .smText {
   // font-size: 0.67rem;
